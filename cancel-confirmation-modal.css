@@ -1,0 +1,189 @@
+/* Custom Confirmation Modal for Cancel Booking */
+.cancel-confirmation-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+}
+
+.cancel-confirmation-modal.show {
+    display: flex;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.cancel-modal-content {
+    background: white;
+    border-radius: 20px;
+    max-width: 500px;
+    width: 90%;
+    padding: 0;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.cancel-modal-header {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+    padding: 30px;
+    border-radius: 20px 20px 0 0;
+    text-align: center;
+}
+
+.cancel-modal-icon {
+    width: 70px;
+    height: 70px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+}
+
+.cancel-modal-icon svg {
+    width: 40px;
+    height: 40px;
+    stroke: white;
+    stroke-width: 2.5;
+    fill: none;
+}
+
+.cancel-modal-header h3 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.cancel-modal-body {
+    padding: 30px;
+}
+
+.cancel-modal-body p {
+    font-size: 16px;
+    color: #475569;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.cancel-warning-list {
+    background: #fef2f2;
+    border-left: 4px solid #ef4444;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+.cancel-warning-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    color: #7f1d1d;
+    font-weight: 500;
+}
+
+.cancel-warning-item svg {
+    width: 20px;
+    height: 20px;
+    stroke: #dc2626;
+    flex-shrink: 0;
+}
+
+.cancel-modal-footer {
+    display: flex;
+    gap: 15px;
+    padding: 0 30px 30px;
+}
+
+.cancel-modal-btn {
+    flex: 1;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.cancel-modal-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.cancel-btn-confirm {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+}
+
+.cancel-btn-confirm:hover {
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(220, 38, 38, 0.3);
+}
+
+.cancel-btn-cancel {
+    background: #f1f5f9;
+    color: #475569;
+}
+
+.cancel-btn-cancel:hover {
+    background: #e2e8f0;
+    color: #1e293b;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+    .cancel-modal-content {
+        width: 95%;
+        margin: 20px;
+    }
+    
+    .cancel-modal-header {
+        padding: 25px 20px;
+    }
+    
+    .cancel-modal-body {
+        padding: 20px;
+    }
+    
+    .cancel-modal-footer {
+        flex-direction: column;
+        padding: 0 20px 20px;
+    }
+    
+    .cancel-modal-btn {
+        width: 100%;
+    }
+}

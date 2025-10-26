@@ -1,0 +1,61 @@
+/* Force Font Awesome icons to display with correct Unicode */
+
+.fas.fa-medal::before {
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 900 !important;
+    content: "\f5a2" !important;
+    font-style: normal !important;
+    display: inline-block !important;
+}
+
+.fas.fa-trophy::before {
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 900 !important;
+    content: "\f091" !important;
+    font-style: normal !important;
+}
+
+.fas.fa-crown::before {
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 900 !important;
+    content: "\f521" !important;
+    font-style: normal !important;
+}
+
+.fas.fa-star::before {
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 900 !important;
+    content: "\f005" !important;
+    font-style: normal !important;
+}
+
+.fas.fa-calendar-check::before {
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 900 !important;
+    content: "\f274" !important;
+    font-style: normal !important;
+}
+
+.fas.fa-ticket-alt::before {
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 900 !important;
+    content: "\f3ff" !important;
+    font-style: normal !important;
+}
+
+/* Ensure rank medals display properly */
+.rank-medal i.fa-medal {
+    font-size: 24px;
+}
+
+.rank-medal.gold i {
+    color: #FFD700 !important;
+}
+
+.rank-medal.silver i {
+    color: #C0C0C0 !important;
+}
+
+.rank-medal.bronze i {
+    color: #CD7F32 !important;
+}

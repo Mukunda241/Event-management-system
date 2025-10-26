@@ -1,0 +1,1237 @@
+/* ===== Event Management System - Register Page (Different Design) ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* ===== Different Animated Background (Particles + Gradient Orbs) ===== */
+.register-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+    z-index: -1;
+    overflow: hidden;
+}
+
+/* Floating Particles (Different from login bubbles) */
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: particle-float 15s infinite ease-in-out;
+}
+
+.particle-1 {
+    left: 20%;
+    top: 20%;
+    animation-delay: 0s;
+}
+
+.particle-2 {
+    left: 60%;
+    top: 40%;
+    animation-delay: 3s;
+}
+
+.particle-3 {
+    left: 80%;
+    top: 70%;
+    animation-delay: 1.5s;
+}
+
+.particle-4 {
+    left: 30%;
+    top: 80%;
+    animation-delay: 4s;
+}
+
+.particle-5 {
+    left: 70%;
+    top: 10%;
+    animation-delay: 2s;
+}
+
+@keyframes particle-float {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    25% {
+        transform: translate(30px, -30px) scale(1.2);
+    }
+    50% {
+        transform: translate(-20px, 20px) scale(0.8);
+    }
+    75% {
+        transform: translate(20px, -10px) scale(1.1);
+    }
+}
+
+/* Gradient Orbs (Unique to register page) */
+.gradient-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+    animation: orb-pulse 8s infinite ease-in-out;
+}
+
+.orb-1 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent);
+    top: -100px;
+    right: -100px;
+    animation-delay: 0s;
+}
+
+.orb-2 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(103, 126, 234, 0.4), transparent);
+    bottom: -150px;
+    left: -150px;
+    animation-delay: 2s;
+}
+
+@keyframes orb-pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.4;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.6;
+    }
+}
+
+/* ===== Layout Structure ===== */
+.register-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== Header Banner ===== */
+.register-header {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    animation: slideDown 0.6s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon-small {
+    width: 40px;
+    height: 40px;
+    color: #667eea;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: 800;
+    color: #667eea;
+    letter-spacing: -0.5px;
+}
+
+.back-to-login {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: transparent;
+    color: #667eea;
+    text-decoration: none;
+    border: 2px solid #667eea;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.back-to-login:hover {
+    background: #667eea;
+    color: white;
+    transform: translateX(-5px);
+}
+
+/* ===== Main Content Area ===== */
+.register-main {
+    flex: 1;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.register-container {
+    max-width: 1400px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 40px;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== Registration Card ===== */
+.register-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.step-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.step {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #e0e0e0;
+    color: #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.step.active {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.step-line {
+    width: 50px;
+    height: 2px;
+    background: #e0e0e0;
+}
+
+.card-header h1 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 8px;
+    font-weight: 800;
+}
+
+.subtitle {
+    color: #666;
+    font-size: 16px;
+}
+
+/* ===== Form Sections ===== */
+.form-section {
+    margin-bottom: 35px;
+    padding: 25px;
+    background: #f8f9ff;
+    border-radius: 15px;
+    border: 1px solid #e8e8ff;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    color: #667eea;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.section-icon {
+    font-size: 24px;
+}
+
+/* ===== Input Fields (Different Style) ===== */
+.form-row {
+    margin-bottom: 20px;
+}
+
+.form-row-half {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 22px 12px 10px 12px;
+    font-size: 16px;
+    color: #333;
+    border: none;
+    border-bottom: 2px solid #ddd;
+    outline: none;
+    background: white;
+    border-radius: 8px 8px 0 0;
+    transition: all 0.3s ease;
+}
+
+.input-wrapper input:focus {
+    border-bottom-color: #667eea;
+    background: #fafbff;
+}
+
+.input-wrapper label {
+    position: absolute;
+    top: 22px;
+    left: 12px;
+    font-size: 16px;
+    color: #999;
+    pointer-events: none;
+    transition: 0.3s ease;
+}
+
+.input-wrapper input:focus ~ label,
+.input-wrapper input:valid ~ label {
+    top: 6px;
+    font-size: 11px;
+    color: #667eea;
+    font-weight: 600;
+}
+
+.input-border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    transition: width 0.3s ease;
+}
+
+.input-wrapper input:focus ~ .input-border {
+    width: 100%;
+}
+
+/* ===== Role Selection (Card Grid) ===== */
+.role-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.role-card-large {
+    position: relative;
+    cursor: pointer;
+    display: block;
+}
+
+.role-card-large input[type="radio"] {
+    display: none;
+}
+
+.role-content {
+    padding: 25px;
+    background: white;
+    border: 3px solid #e0e0e0;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    text-align: center;
+    height: 100%;
+}
+
+.role-card-large input[type="radio"]:checked + .role-content {
+    border-color: #667eea;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05));
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.2);
+    transform: translateY(-5px);
+}
+
+.role-content:hover {
+    border-color: #667eea;
+    transform: translateY(-3px);
+}
+
+.role-icon-large {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.role-content h4 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.role-content p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.role-features {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.role-features li {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 6px;
+    padding-left: 5px;
+}
+
+.role-checkmark {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 28px;
+    height: 28px;
+    background: #667eea;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.3s ease;
+}
+
+.role-card-large input[type="radio"]:checked ~ .role-checkmark {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* ===== Submit Button ===== */
+.register-btn {
+    width: 100%;
+    padding: 18px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    margin-top: 30px;
+}
+
+.register-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(102, 126, 234, 0.5);
+}
+
+.register-btn:active {
+    transform: translateY(-1px);
+}
+
+/* ===== Multi-Step Form Styles ===== */
+.step-content {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.step-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Step Indicator Active State */
+.step-indicator .step.active {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.step-indicator .step-line.active {
+    background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+/* Button Group for Step 2 */
+.button-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.back-btn {
+    background: linear-gradient(135deg, #6b7280, #4b5563);
+    flex: 0 0 auto;
+    width: auto;
+    padding: 18px 30px;
+}
+
+.back-btn:hover {
+    background: linear-gradient(135deg, #4b5563, #374151);
+}
+
+.submit-btn {
+    flex: 1;
+}
+
+.next-btn {
+    width: 100%;
+}
+
+/* ===== Message ===== */
+.register-message {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* ===== Terms Notice ===== */
+.terms-notice {
+    margin-top: 25px;
+    text-align: center;
+    padding-top: 25px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.terms-notice p {
+    font-size: 13px;
+    color: #666;
+}
+
+.terms-notice a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.terms-notice a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Benefits Panel (Side) ===== */
+.benefits-panel {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 120px;
+    align-self: flex-start;
+}
+
+.benefits-panel h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 25px;
+    font-weight: 800;
+}
+
+.benefit-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    align-items: flex-start;
+}
+
+.benefit-icon {
+    font-size: 32px;
+    flex-shrink: 0;
+}
+
+.benefit-item h4 {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.benefit-item p {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.5;
+}
+
+.testimonial {
+    margin-top: 30px;
+    padding: 20px;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+    border-radius: 12px;
+    border-left: 4px solid #667eea;
+}
+
+.testimonial p {
+    font-size: 14px;
+    color: #555;
+    font-style: italic;
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+.testimonial-author {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.testimonial-author strong {
+    font-size: 14px;
+    color: #333;
+}
+
+.testimonial-author span {
+    font-size: 12px;
+    color: #666;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 1200px) {
+    .register-container {
+        grid-template-columns: 1fr;
+    }
+
+    .benefits-panel {
+        position: static;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        padding: 15px 20px;
+    }
+
+    .logo-text {
+        font-size: 20px;
+    }
+
+    .back-to-login {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    .register-card {
+        padding: 25px;
+    }
+
+    .card-header h1 {
+        font-size: 26px;
+    }
+
+    .form-row-half {
+        grid-template-columns: 1fr;
+    }
+
+    .role-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .benefits-panel {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .register-main {
+        padding: 20px 10px;
+    }
+
+    .register-card {
+        padding: 20px;
+    }
+
+    .form-section {
+        padding: 20px;
+    }
+}
+
+/* ===== Animated Background ===== */
+.animated-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #0073e6 0%, #005bb5 50%, #003d7a 100%);
+    z-index: -1;
+    overflow: hidden;
+}
+
+/* Floating Bubbles Animation */
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    animation: float 20s infinite ease-in-out;
+}
+
+.bubble-1 {
+    width: 120px;
+    height: 120px;
+    left: 10%;
+    bottom: -120px;
+    animation-delay: 0s;
+    animation-duration: 25s;
+}
+
+.bubble-2 {
+    width: 80px;
+    height: 80px;
+    left: 25%;
+    bottom: -80px;
+    animation-delay: 3s;
+    animation-duration: 20s;
+}
+
+.bubble-3 {
+    width: 150px;
+    height: 150px;
+    left: 50%;
+    bottom: -150px;
+    animation-delay: 7s;
+    animation-duration: 30s;
+}
+
+.bubble-4 {
+    width: 100px;
+    height: 100px;
+    left: 70%;
+    bottom: -100px;
+    animation-delay: 2s;
+    animation-duration: 22s;
+}
+
+.bubble-5 {
+    width: 90px;
+    height: 90px;
+    left: 85%;
+    bottom: -90px;
+    animation-delay: 5s;
+    animation-duration: 18s;
+}
+
+.bubble-6 {
+    width: 110px;
+    height: 110px;
+    left: 40%;
+    bottom: -110px;
+    animation-delay: 9s;
+    animation-duration: 27s;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.8;
+    }
+    90% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-120vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* ===== Main Layout ===== */
+.login-wrapper {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* ===== Left Side: Branding Section ===== */
+.branding-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    color: white;
+    position: relative;
+}
+
+.brand-content {
+    max-width: 500px;
+    animation: slideInLeft 0.8s ease-out;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.logo-icon {
+    width: 60px;
+    height: 60px;
+    color: white;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
+}
+
+.app-name {
+    font-size: 48px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.tagline {
+    font-size: 22px;
+    font-weight: 300;
+    margin-bottom: 50px;
+    opacity: 0.95;
+    letter-spacing: 1px;
+}
+
+.features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateX(10px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.feature-icon {
+    font-size: 32px;
+    flex-shrink: 0;
+}
+
+.feature-item h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.feature-item p {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* ===== Right Side: Login Container ===== */
+.login-container {
+    flex: 0 0 500px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+}
+
+.login-box {
+    width: 100%;
+    max-width: 420px;
+    animation: slideInRight 0.8s ease-out;
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-header h2 {
+    font-size: 32px;
+    color: #0073e6;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.login-header p {
+    color: #666;
+    font-size: 15px;
+}
+
+/* ===== Input Groups ===== */
+.input-group {
+    position: relative;
+    margin-bottom: 24px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px 45px 14px 15px;
+    font-size: 16px;
+    color: #333;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    outline: none;
+    background: #f9f9f9;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: #0073e6;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(0, 115, 230, 0.1);
+}
+
+.input-group label {
+    position: absolute;
+    top: 14px;
+    left: 15px;
+    font-size: 16px;
+    color: #999;
+    pointer-events: none;
+    transition: 0.3s ease;
+    background: white;
+    padding: 0 5px;
+}
+
+.input-group input:focus ~ label,
+.input-group input:valid ~ label {
+    top: -10px;
+    font-size: 13px;
+    color: #0073e6;
+    font-weight: 600;
+}
+
+.input-icon {
+    position: absolute;
+    right: 15px;
+    top: 14px;
+    font-size: 20px;
+    opacity: 0.5;
+}
+
+/* ===== Role Selection ===== */
+.role-selection {
+    margin-bottom: 25px;
+}
+
+.role-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+.role-option {
+    display: block;
+    margin-bottom: 12px;
+    cursor: pointer;
+}
+
+.role-option input[type="radio"] {
+    display: none;
+}
+
+.role-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    background: #f9f9f9;
+    transition: all 0.3s ease;
+}
+
+.role-option input[type="radio"]:checked + .role-card {
+    border-color: #0073e6;
+    background: rgba(0, 115, 230, 0.05);
+    box-shadow: 0 0 0 4px rgba(0, 115, 230, 0.1);
+}
+
+.role-card:hover {
+    border-color: #0073e6;
+    transform: translateY(-2px);
+}
+
+.role-icon {
+    font-size: 28px;
+    flex-shrink: 0;
+}
+
+.role-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.role-text strong {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 3px;
+}
+
+.role-text small {
+    font-size: 13px;
+    color: #666;
+}
+
+/* ===== Login Button ===== */
+.login-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #0073e6, #005bb5);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 4px 15px rgba(0, 115, 230, 0.3);
+}
+
+.login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 115, 230, 0.4);
+}
+
+.login-btn:active {
+    transform: translateY(0);
+}
+
+.btn-arrow {
+    transition: transform 0.3s ease;
+}
+
+.login-btn:hover .btn-arrow {
+    transform: translateX(5px);
+}
+
+/* ===== Extra Links ===== */
+.extra-links {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.signup-text {
+    color: #666;
+}
+
+.forgot-link,
+.signup-link {
+    color: #0073e6;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.forgot-link:hover,
+.signup-link:hover {
+    text-decoration: underline;
+    color: #005bb5;
+}
+
+.divider {
+    color: #ccc;
+}
+
+/* ===== Login Message ===== */
+.login-message {
+    margin-top: 20px;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    min-height: 20px;
+}
+
+/* ===== Info Footer ===== */
+.info-footer {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+}
+
+.info-footer p {
+    font-size: 12px;
+    color: #666;
+}
+
+/* ===== Animations ===== */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 1024px) {
+    .login-wrapper {
+        flex-direction: column;
+    }
+
+    .branding-section {
+        flex: 0 0 auto;
+        padding: 30px 20px;
+    }
+
+    .brand-content {
+        max-width: 100%;
+    }
+
+    .app-name {
+        font-size: 36px;
+    }
+
+    .tagline {
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+
+    .features-list {
+        display: none;
+    }
+
+    .login-container {
+        flex: 1;
+        padding: 20px;
+        box-shadow: none;
+    }
+
+    body {
+        overflow: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .app-name {
+        font-size: 28px;
+    }
+
+    .tagline {
+        font-size: 16px;
+    }
+
+    .login-header h2 {
+        font-size: 26px;
+    }
+
+    .login-box {
+        padding: 0;
+    }
+
+    .input-group {
+        margin-bottom: 20px;
+    }
+}

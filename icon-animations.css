@@ -1,0 +1,510 @@
+/* ========================================
+   🎨 PROFESSIONAL ICON ANIMATIONS & STYLES
+   EventPulse - Next Level Design
+   ======================================== */
+
+/* === TROPHY & AWARD ICONS === */
+.fa-trophy,
+.fa-medal,
+.fa-award {
+    filter: drop-shadow(0 2px 4px rgba(255, 215, 0, 0.3));
+    transition: all 0.3s ease;
+}
+
+.fa-trophy:hover,
+.fa-medal:hover,
+.fa-award:hover {
+    transform: scale(1.15) rotate(5deg);
+    filter: drop-shadow(0 4px 8px rgba(255, 215, 0, 0.5));
+}
+
+/* Trophy pulse animation */
+@keyframes trophy-pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.points-cell .fa-trophy {
+    animation: trophy-pulse 2s ease-in-out infinite;
+}
+
+/* === CROWN ICON (LEGEND/PREMIUM) === */
+.fa-crown {
+    color: #FFD700 !important;
+    filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6));
+    animation: crown-shimmer 3s ease-in-out infinite;
+}
+
+@keyframes crown-shimmer {
+    0%, 100% {
+        filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6)) brightness(1);
+    }
+    50% {
+        filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.8)) brightness(1.2);
+    }
+}
+
+/* === GEM ICON (PRO BADGE) === */
+.fa-gem {
+    color: #00CED1 !important;
+    filter: drop-shadow(0 0 6px rgba(0, 206, 209, 0.5));
+    animation: gem-sparkle 2.5s ease-in-out infinite;
+}
+
+@keyframes gem-sparkle {
+    0%, 100% {
+        transform: rotate(0deg);
+        filter: drop-shadow(0 0 6px rgba(0, 206, 209, 0.5));
+    }
+    25% {
+        transform: rotate(-5deg);
+    }
+    50% {
+        transform: rotate(0deg);
+        filter: drop-shadow(0 0 10px rgba(0, 206, 209, 0.8)) brightness(1.3);
+    }
+    75% {
+        transform: rotate(5deg);
+    }
+}
+
+/* === STAR ICON (RATING/FEATURED) === */
+.fa-star {
+    color: #FFD700;
+    filter: drop-shadow(0 0 4px rgba(255, 215, 0, 0.4));
+    transition: all 0.3s ease;
+}
+
+.fa-star:hover {
+    transform: scale(1.2) rotate(15deg);
+    filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.7));
+}
+
+@keyframes star-twinkle {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(0.9);
+    }
+}
+
+/* === MEDAL ICONS (RANK BADGES) === */
+.rank-medal .fa-medal {
+    font-size: 1.5rem;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.2));
+    transition: all 0.4s ease;
+}
+
+.rank-medal.gold .fa-medal {
+    color: #FFD700 !important;
+    animation: medal-shine 3s ease-in-out infinite;
+}
+
+.rank-medal.silver .fa-medal {
+    color: #C0C0C0 !important;
+    animation: medal-shine 3.5s ease-in-out infinite;
+}
+
+.rank-medal.bronze .fa-medal {
+    color: #CD7F32 !important;
+    animation: medal-shine 4s ease-in-out infinite;
+}
+
+@keyframes medal-shine {
+    0%, 100% {
+        filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.2)) brightness(1);
+    }
+    50% {
+        filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3)) brightness(1.3);
+    }
+}
+
+.rank-medal:hover .fa-medal {
+    transform: rotateY(360deg);
+}
+
+/* === ACHIEVEMENT BADGES === */
+.achievement-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    margin: 0 4px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    padding: 6px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.achievement-badge:hover {
+    transform: scale(1.15) translateY(-3px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.5);
+}
+
+.achievement-badge i {
+    font-size: 16px;
+}
+
+/* === ORGANIZER BADGE === */
+.organizer-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(245, 87, 108, 0.3);
+    transition: all 0.3s ease;
+}
+
+.organizer-badge:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(245, 87, 108, 0.5);
+}
+
+.organizer-badge .fa-crown {
+    animation: none;
+    font-size: 14px;
+}
+
+/* === ICON HOVER EFFECTS === */
+.nav-link i,
+.stat-icon i {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link:hover i {
+    transform: scale(1.15);
+    filter: brightness(1.2);
+}
+
+.nav-link.active i {
+    animation: active-bounce 0.6s ease;
+}
+
+@keyframes active-bounce {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+/* === STAT CARD ICONS === */
+.stat-card .stat-icon {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    transition: all 0.4s ease;
+}
+
+.stat-card:hover .stat-icon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+}
+
+.stat-card .stat-icon i {
+    font-size: 2rem;
+    color: white;
+}
+
+/* === BUTTON ICONS === */
+button i,
+.btn i {
+    margin-right: 8px;
+    transition: all 0.3s ease;
+}
+
+button:hover i,
+.btn:hover i {
+    transform: scale(1.1);
+}
+
+/* Register/Action button icon bounce */
+.register-btn:hover i,
+.action-btn:hover i {
+    animation: icon-bounce 0.6s ease;
+}
+
+@keyframes icon-bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-4px);
+    }
+}
+
+/* === EVENT BADGE ICONS === */
+.event-badge i {
+    margin-right: 6px;
+    font-size: 0.9rem;
+}
+
+.event-badge.live i {
+    animation: pulse-dot 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.6;
+        transform: scale(0.8);
+    }
+}
+
+/* === NOTIFICATION ICONS === */
+.notification-btn i {
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.notification-btn:hover i {
+    animation: bell-ring 0.6s ease;
+}
+
+@keyframes bell-ring {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(15deg);
+    }
+    75% {
+        transform: rotate(-15deg);
+    }
+}
+
+/* === SEARCH ICON === */
+.search-icon {
+    transition: all 0.3s ease;
+}
+
+.search-container:focus-within .search-icon,
+.search-container:hover .search-icon {
+    transform: scale(1.15);
+    color: #6366f1;
+}
+
+/* === CALENDAR & TIME ICONS === */
+.fa-calendar,
+.fa-calendar-alt,
+.fa-calendar-check,
+.fa-calendar-plus {
+    color: #6366f1;
+    transition: all 0.3s ease;
+}
+
+.fa-calendar:hover,
+.fa-calendar-alt:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 2px 6px rgba(99, 102, 241, 0.4));
+}
+
+.fa-clock {
+    color: #8b5cf6;
+}
+
+/* === LOCATION ICONS === */
+.fa-map-marker-alt {
+    color: #ef4444;
+    filter: drop-shadow(0 2px 4px rgba(239, 68, 68, 0.3));
+}
+
+/* === TICKET ICONS === */
+.fa-ticket-alt,
+.fa-qrcode {
+    color: #10b981;
+    transition: all 0.3s ease;
+}
+
+.fa-ticket-alt:hover {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+/* === SOCIAL ICONS === */
+.fa-share-alt {
+    transition: all 0.3s ease;
+}
+
+.fa-share-alt:hover {
+    transform: scale(1.2) rotate(15deg);
+    color: #3b82f6;
+}
+
+/* === USER ICONS === */
+.fa-user,
+.fa-user-circle,
+.fa-users,
+.fa-user-plus {
+    color: #6366f1;
+}
+
+.fa-user-friends {
+    color: #8b5cf6;
+}
+
+/* === THEATER MASKS (EVENT MASTER) === */
+.fa-theater-masks {
+    color: #ec4899;
+    filter: drop-shadow(0 2px 6px rgba(236, 72, 153, 0.3));
+}
+
+/* === SEEDLING (ROOKIE BADGE) === */
+.fa-seedling {
+    color: #10b981;
+}
+
+/* === LOADING SPINNER FOR ICONS === */
+@keyframes icon-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.icon-loading {
+    animation: icon-spin 1s linear infinite;
+}
+
+/* === RESPONSIVE ICON SIZES === */
+@media (max-width: 768px) {
+    .stat-card .stat-icon i {
+        font-size: 1.5rem;
+    }
+    
+    .rank-medal .fa-medal {
+        font-size: 1.2rem;
+    }
+    
+    .achievement-badge {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* === GRADIENT TEXT FOR ICON LABELS === */
+.icon-label-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 600;
+}
+
+/* === FLOATING ANIMATION FOR FEATURED ICONS === */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.icon-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* === GLOW EFFECT FOR PREMIUM FEATURES === */
+.icon-glow {
+    filter: drop-shadow(0 0 8px currentColor);
+    animation: glow-pulse 2s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+    0%, 100% {
+        filter: drop-shadow(0 0 8px currentColor);
+    }
+    50% {
+        filter: drop-shadow(0 0 16px currentColor);
+    }
+}
+
+/* === SUCCESS/ERROR ICONS === */
+.fa-check-circle {
+    color: #10b981;
+}
+
+.fa-times-circle {
+    color: #ef4444;
+}
+
+.fa-exclamation-circle {
+    color: #f59e0b;
+}
+
+.fa-info-circle {
+    color: #3b82f6;
+}
+
+/* === INTERACTIVE ICON BUTTONS === */
+.icon-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.icon-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 16px rgba(102, 126, 234, 0.5);
+}
+
+.icon-button:active {
+    transform: scale(0.95);
+}
+
+/* === ICON TOOLTIP === */
+[data-icon-tooltip] {
+    position: relative;
+}
+
+[data-icon-tooltip]::after {
+    content: attr(data-icon-tooltip);
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+[data-icon-tooltip]:hover::after {
+    opacity: 1;
+}

@@ -1,0 +1,1162 @@
+/* ===== 🌙 NEXT-LEVEL PROFESSIONAL DARK MODE ===== */
+/* 🎨 Stunning Design System with Attention to Every Detail */
+
+/* ============================================
+   💡 LIGHT MODE - Premium Professional Theme
+   ============================================ */
+:root {
+    /* 🎨 Primary Backgrounds - Soft & Clean */
+    --bg-primary: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #f9fafb;
+    --bg-card: #ffffff;
+    --bg-header: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    --bg-nav: rgba(255, 255, 255, 0.98);
+    --bg-hero: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --bg-modal: rgba(255, 255, 255, 0.98);
+    --bg-input: #f9fafb;
+    --bg-code: #f3f4f6;
+    
+    /* ✨ Text Colors - Perfect Readability */
+    --text-primary: #1e293b;
+    --text-secondary: #475569;
+    --text-tertiary: #64748b;
+    --text-light: #ffffff;
+    --text-muted: #94a3b8;
+    --text-link: #6366f1;
+    --text-link-hover: #4f46e5;
+    
+    /* 🎯 Border Colors - Subtle & Elegant */
+    --border-color: #e2e8f0;
+    --border-light: #f1f5f9;
+    --border-focus: #8b5cf6;
+    --border-hover: #cbd5e1;
+    
+    /* 💫 Shadow System - Depth & Elevation */
+    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+    --shadow-xl: 0 12px 32px rgba(0, 0, 0, 0.15);
+    --shadow-2xl: 0 20px 48px rgba(0, 0, 0, 0.18);
+    --shadow-colored: 0 8px 24px rgba(99, 102, 241, 0.2);
+    --shadow-glow: 0 0 20px rgba(139, 92, 246, 0.3);
+    
+    /* 🎨 Accent & Brand Colors */
+    --accent-primary: #6366f1;
+    --accent-secondary: #8b5cf6;
+    --accent-tertiary: #a855f7;
+    --accent-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    --accent-gradient-hover: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    
+    /* 🎯 Status Colors - Clear & Vibrant */
+    --status-draft: #6b7280;
+    --status-active: #10b981;
+    --status-closed: #ef4444;
+    --status-completed: #3b82f6;
+    --status-cancelled: #f59e0b;
+    --status-success: #22c55e;
+    --status-warning: #f59e0b;
+    --status-error: #ef4444;
+    --status-info: #3b82f6;
+    
+    /* 🌈 Overlay & Backdrop */
+    --overlay-dark: rgba(0, 0, 0, 0.5);
+    --overlay-light: rgba(255, 255, 255, 0.9);
+    --backdrop-blur: blur(12px);
+}
+
+/* ============================================
+   🌙 DARK MODE - Mind-Blowing Premium Design
+   ============================================ */
+[data-theme="dark"] {
+    /* 🎨 Primary Backgrounds - Deep & Rich */
+    --bg-primary: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+    --bg-secondary: #1e293b;
+    --bg-tertiary: #0f172a;
+    --bg-card: rgba(30, 41, 59, 0.8);
+    --bg-header: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+    --bg-nav: rgba(15, 23, 42, 0.95);
+    --bg-hero: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    --bg-modal: rgba(15, 23, 42, 0.98);
+    --bg-input: rgba(15, 23, 42, 0.6);
+    --bg-code: #1e1b4b;
+    
+    /* ✨ Text Colors - Crystal Clear on Dark */
+    --text-primary: #f8fafc;
+    --text-secondary: #e2e8f0;
+    --text-tertiary: #cbd5e1;
+    --text-light: #ffffff;
+    --text-muted: #94a3b8;
+    --text-link: #a78bfa;
+    --text-link-hover: #c4b5fd;
+    
+    /* 🎯 Border Colors - Subtle Glow */
+    --border-color: rgba(139, 92, 246, 0.15);
+    --border-light: rgba(99, 102, 241, 0.1);
+    --border-focus: #a78bfa;
+    --border-hover: rgba(167, 139, 250, 0.3);
+    
+    /* 💫 Shadow System - Dramatic Depth */
+    --shadow-xs: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.6);
+    --shadow-xl: 0 12px 32px rgba(0, 0, 0, 0.7);
+    --shadow-2xl: 0 20px 48px rgba(0, 0, 0, 0.8);
+    --shadow-colored: 0 8px 32px rgba(139, 92, 246, 0.4);
+    --shadow-glow: 0 0 30px rgba(167, 139, 250, 0.5);
+    
+    /* 🎨 Accent & Brand Colors - Vibrant & Electric */
+    --accent-primary: #8b5cf6;
+    --accent-secondary: #a78bfa;
+    --accent-tertiary: #c4b5fd;
+    --accent-gradient: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%);
+    --accent-gradient-hover: linear-gradient(135deg, #a78bfa 0%, #c084fc 100%);
+    
+    /* 🎯 Status Colors - Bright & Clear */
+    --status-draft: #9ca3af;
+    --status-active: #34d399;
+    --status-closed: #f87171;
+    --status-completed: #60a5fa;
+    --status-cancelled: #fbbf24;
+    --status-success: #4ade80;
+    --status-warning: #fbbf24;
+    --status-error: #f87171;
+    --status-info: #60a5fa;
+    
+    /* 🌈 Overlay & Backdrop */
+    --overlay-dark: rgba(0, 0, 0, 0.8);
+    --overlay-light: rgba(15, 23, 42, 0.95);
+    --backdrop-blur: blur(16px);
+}
+
+
+/* ============================================
+   🎨 GLOBAL THEME APPLICATION
+   ============================================ */
+
+/* 🌟 Body & Main Elements */
+body {
+    background: var(--bg-primary) !important;
+    color: var(--text-primary);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.main-content {
+    background: transparent;
+}
+
+/* 🎯 Dark Mode Specifics - No White Backgrounds */
+[data-theme="dark"] * {
+    background-color: inherit;
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] body {
+    background: var(--bg-primary) !important;
+}
+
+[data-theme="dark"] .main-content {
+    background: transparent !important;
+}
+
+/* 💎 Containers & Wrappers - Transparent Overlays */
+[data-theme="dark"] .event-detail-wrapper,
+[data-theme="dark"] .event-content,
+[data-theme="dark"] .container,
+[data-theme="dark"] .wrapper,
+[data-theme="dark"] .content-wrapper,
+[data-theme="dark"] .page-wrapper,
+[data-theme="dark"] section,
+[data-theme="dark"] article,
+[data-theme="dark"] .events-grid,
+[data-theme="dark"] .event-list,
+[data-theme="dark"] .grid-container {
+    background: transparent !important;
+}
+
+/* 🔗 Breadcrumbs - Elegant Navigation */
+[data-theme="dark"] .breadcrumb-container {
+    background: rgba(139, 92, 246, 0.05);
+    border: 1px solid var(--border-color);
+    backdrop-filter: var(--backdrop-blur);
+    padding: 12px 20px;
+    border-radius: 12px;
+}
+
+[data-theme="dark"] .breadcrumb-link {
+    color: var(--accent-primary);
+    transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .breadcrumb-link:hover {
+    color: var(--accent-secondary);
+    text-shadow: 0 0 10px var(--accent-primary);
+}
+
+[data-theme="dark"] .breadcrumb-current {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+[data-theme="dark"] .breadcrumb-separator {
+    color: var(--text-tertiary);
+    opacity: 0.5;
+}
+
+/* ============================================
+   🎨 HEADER - Stunning Top Bar
+   ============================================ */
+
+.main-header {
+    background: var(--bg-header);
+    box-shadow: 0 4px 20px var(--shadow-md);
+}
+
+/* Navigation */
+.main-nav {
+    background: var(--bg-nav);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.nav-link {
+    color: var(--text-secondary);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--accent-primary);
+}
+
+/* Cards */
+.event-card,
+.search-filter-box,
+.stats-card,
+.profile-card,
+.registration-card {
+    background: var(--bg-card);
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--border-color);
+}
+
+.event-card:hover {
+    box-shadow: var(--card-hover-shadow);
+}
+
+/* Inputs & Forms */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="time"],
+input[type="number"],
+textarea,
+select {
+    background: var(--input-bg);
+    border-color: var(--input-border);
+    color: var(--text-primary);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    background: var(--input-focus-bg);
+    border-color: var(--border-focus);
+}
+
+/* Search Bar */
+.search-bar {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-light);
+}
+
+[data-theme="dark"] .search-bar {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-light);
+}
+
+.search-bar::placeholder {
+    color: var(--text-tertiary);
+}
+
+/* Buttons */
+.view-details-btn,
+.register-btn,
+.clear-filters-btn {
+    box-shadow: 0 2px 10px var(--shadow-sm);
+}
+
+/* Hero Section */
+.page-hero,
+.hero-section {
+    background: var(--bg-hero);
+}
+
+/* Tables */
+table {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+}
+
+th {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--border-color);
+}
+
+td {
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border-color);
+}
+
+tr:hover {
+    background: var(--bg-tertiary);
+}
+
+/* Empty State */
+.empty-state {
+    background: var(--bg-card);
+    border: 2px dashed var(--border-color);
+}
+
+/* Modals & Overlays */
+.modal-content {
+    background: var(--bg-card);
+    color: var(--text-primary);
+}
+
+/* Notification Badge */
+.notification-badge {
+    background: var(--status-closed);
+}
+
+/* Calendar (Dark Mode Specific) */
+[data-theme="dark"] .fc {
+    background: var(--bg-card);
+}
+
+[data-theme="dark"] .fc-theme-standard td,
+[data-theme="dark"] .fc-theme-standard th {
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .fc-daygrid-day {
+    background: var(--bg-tertiary);
+}
+
+[data-theme="dark"] .fc-event {
+    border-color: var(--accent-primary);
+}
+
+/* Scrollbar (Dark Mode) */
+[data-theme="dark"] ::-webkit-scrollbar {
+    width: 12px;
+    background: var(--bg-tertiary);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+    background: var(--accent-primary);
+    border-radius: 6px;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-secondary);
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--accent-gradient);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px var(--shadow-colored);
+    transition: all 0.3s ease;
+    z-index: 9999;
+    color: white;
+}
+
+.dark-mode-toggle:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 8px 30px var(--shadow-colored);
+}
+
+.dark-mode-toggle:active {
+    transform: translateY(-2px) scale(1.05);
+}
+
+.dark-mode-toggle svg {
+    width: 28px;
+    height: 28px;
+    transition: transform 0.3s ease;
+}
+
+.dark-mode-toggle:hover svg {
+    transform: rotate(20deg);
+}
+
+/* Icon transitions */
+.dark-mode-toggle .sun-icon,
+.dark-mode-toggle .moon-icon {
+    position: absolute;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+[data-theme="light"] .dark-mode-toggle .moon-icon {
+    opacity: 1;
+    transform: rotate(0deg);
+}
+
+[data-theme="light"] .dark-mode-toggle .sun-icon {
+    opacity: 0;
+    transform: rotate(90deg);
+}
+
+[data-theme="dark"] .dark-mode-toggle .sun-icon {
+    opacity: 1;
+    transform: rotate(0deg);
+}
+
+[data-theme="dark"] .dark-mode-toggle .moon-icon {
+    opacity: 0;
+    transform: rotate(-90deg);
+}
+
+/* Smooth theme transition */
+* {
+    transition: background-color 0.3s ease, 
+                border-color 0.3s ease, 
+                color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* Prevent transition on page load */
+.no-transition * {
+    transition: none !important;
+}
+
+/* Toast notification in dark mode */
+[data-theme="dark"] .toast {
+    background: var(--bg-card);
+    color: var(--text-light);
+    box-shadow: 0 4px 20px var(--shadow-lg);
+}
+
+/* Dark Mode Specific Improvements */
+
+/* Better text visibility */
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4 {
+    color: var(--text-light);
+}
+
+[data-theme="dark"] p,
+[data-theme="dark"] span,
+[data-theme="dark"] div {
+    color: var(--text-secondary);
+}
+
+/* Event info items */
+[data-theme="dark"] .event-info-item {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .event-info-item svg {
+    color: var(--accent-primary);
+    stroke: var(--accent-primary);
+}
+
+/* Event description */
+[data-theme="dark"] .event-description {
+    color: var(--text-secondary);
+    background: var(--bg-tertiary);
+    border-left: 3px solid var(--accent-primary);
+    padding: 12px 15px;
+    border-radius: 8px;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Event cards description */
+[data-theme="dark"] .event-card .event-description {
+    color: var(--text-secondary);
+    background: rgba(15, 23, 42, 0.5);
+    padding: 10px 12px;
+    border-radius: 6px;
+    line-height: 1.5;
+    margin-top: 10px;
+    border: 1px solid var(--border-color);
+}
+
+/* Info rows (event details page) */
+[data-theme="dark"] .info-row {
+    border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .info-label {
+    color: var(--text-tertiary);
+}
+
+[data-theme="dark"] .info-value {
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+/* Registration section */
+[data-theme="dark"] .registration-section {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .registration-info {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .spots-remaining {
+    color: var(--text-light);
+    font-weight: 700;
+}
+
+/* Action cards in sidebar */
+[data-theme="dark"] .action-card {
+    background: var(--bg-card) !important;
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .registration-card {
+    background: var(--bg-card) !important;
+}
+
+[data-theme="dark"] .card-description {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .registration-status {
+    color: var(--text-secondary);
+}
+
+/* Event sidebar */
+[data-theme="dark"] .event-sidebar {
+    background: transparent;
+}
+
+/* Quick actions */
+[data-theme="dark"] .quick-actions {
+    background: transparent;
+}
+
+[data-theme="dark"] .action-btn {
+    background: var(--bg-tertiary) !important;
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .action-btn:hover {
+    background: var(--bg-secondary) !important;
+    color: var(--text-light);
+    border-color: var(--accent-primary);
+}
+
+/* Registered users list */
+[data-theme="dark"] .registered-users-list {
+    background: var(--bg-tertiary);
+}
+
+[data-theme="dark"] .user-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .user-item:hover {
+    background: var(--bg-secondary);
+    border-color: var(--accent-primary);
+}
+
+/* Stats cards */
+[data-theme="dark"] .stats-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .stat-value {
+    color: var(--text-light);
+}
+
+[data-theme="dark"] .stat-label {
+    color: var(--text-tertiary);
+}
+
+/* Section headers */
+[data-theme="dark"] .section-header h2 {
+    color: var(--text-light);
+}
+
+[data-theme="dark"] .section-count {
+    background: var(--accent-gradient);
+    color: white;
+}
+
+/* Labels and badges */
+[data-theme="dark"] label {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .badge,
+[data-theme="dark"] .tag {
+    background: var(--bg-tertiary);
+    color: var(--text-light);
+    border: 1px solid var(--border-color);
+}
+
+/* Links */
+[data-theme="dark"] a {
+    color: var(--accent-primary);
+}
+
+[data-theme="dark"] a:hover {
+    color: var(--accent-secondary);
+}
+
+/* Logo and branding */
+[data-theme="dark"] .logo-text {
+    color: white;
+}
+
+[data-theme="dark"] .logo-subtext {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Buttons in dark mode */
+[data-theme="dark"] button:not(.dark-mode-toggle):not(.notification-btn):not(.logout-btn) {
+    border: 1px solid var(--border-color);
+}
+
+/* User action buttons */
+[data-theme="dark"] .logout-btn,
+[data-theme="dark"] .notification-btn {
+    color: white;
+}
+
+[data-theme="dark"] .logout-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Event card title */
+[data-theme="dark"] .event-card h3 {
+    color: var(--text-light);
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+/* Event card wrapper */
+[data-theme="dark"] .event-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .event-card:hover {
+    border-color: var(--accent-primary);
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.2);
+    transform: translateY(-3px);
+}
+
+/* Event card info items */
+[data-theme="dark"] .event-card .event-info-item {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .event-card .event-info-item span {
+    color: var(--text-secondary);
+}
+
+/* Empty state */
+[data-theme="dark"] .empty-state h3 {
+    color: var(--accent-primary);
+}
+
+[data-theme="dark"] .empty-state p {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .empty-state svg {
+    stroke: var(--accent-primary);
+}
+
+/* Filter tags */
+[data-theme="dark"] .filter-tag {
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    color: white;
+    border: none;
+}
+
+/* Status messages */
+[data-theme="dark"] .status-message {
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+}
+
+/* Event template specific */
+[data-theme="dark"] .event-header {
+    background: var(--bg-card);
+    border-bottom: 2px solid var(--border-color);
+}
+
+[data-theme="dark"] .event-title {
+    color: var(--text-light);
+}
+
+[data-theme="dark"] .event-meta {
+    color: var(--text-tertiary);
+}
+
+/* Description card on event details page */
+[data-theme="dark"] .description-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .description-card p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
+[data-theme="dark"] .card-header {
+    color: var(--text-light);
+    border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .card-header h2 {
+    color: var(--text-light);
+}
+
+[data-theme="dark"] .card-header svg {
+    color: var(--accent-primary);
+    stroke: var(--accent-primary);
+}
+
+/* Event info card */
+[data-theme="dark"] .event-info-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+}
+
+/* Event header section */
+[data-theme="dark"] .event-header-section {
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+}
+
+[data-theme="dark"] .event-category-badge {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+[data-theme="dark"] .event-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+[data-theme="dark"] .event-quick-meta .meta-item {
+    color: white;
+}
+
+[data-theme="dark"] .event-quick-meta svg {
+    color: white;
+    stroke: white;
+}
+
+/* Back button */
+[data-theme="dark"] .back-button {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="dark"] .back-button:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+/* Registration buttons */
+[data-theme="dark"] .register-btn {
+    background: var(--accent-gradient);
+    color: white;
+    border: none;
+}
+
+[data-theme="dark"] .register-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px var(--shadow-colored);
+}
+
+[data-theme="dark"] .register-btn:disabled {
+    background: var(--bg-tertiary);
+    color: var(--text-tertiary);
+    border: 1px solid var(--border-color);
+}
+
+/* Placeholder text */
+[data-theme="dark"] ::placeholder {
+    color: var(--text-tertiary);
+    opacity: 0.7;
+}
+
+/* Select dropdowns */
+[data-theme="dark"] select option {
+    background: var(--bg-card);
+    color: var(--text-primary);
+}
+
+/* Improved visibility for specific elements */
+[data-theme="dark"] .event-card-header {
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+}
+
+[data-theme="dark"] .page-hero h1,
+[data-theme="dark"] .page-hero p {
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Event Management Dashboard (Organizer) */
+[data-theme="dark"] .dashboard-header {
+    background: var(--bg-card);
+    border-bottom: 2px solid var(--border-color);
+}
+
+[data-theme="dark"] .dashboard-title {
+    color: var(--text-light);
+}
+
+[data-theme="dark"] .welcome-message {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .form-group label {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .form-control,
+[data-theme="dark"] .form-input {
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .form-control:focus,
+[data-theme="dark"] .form-input:focus {
+    background: var(--input-focus-bg);
+    border-color: var(--border-focus);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+[data-theme="dark"] .event-list-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .event-list-item:hover {
+    background: var(--bg-secondary);
+    border-color: var(--accent-primary);
+}
+
+[data-theme="dark"] .event-item-title {
+    color: var(--text-light);
+}
+
+[data-theme="dark"] .event-item-info {
+    color: var(--text-tertiary);
+}
+
+[data-theme="dark"] .action-btn {
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .btn-edit {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    border: none;
+    color: white;
+}
+
+[data-theme="dark"] .btn-delete {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    border: none;
+    color: white;
+}
+
+/* Profile Page */
+[data-theme="dark"] .profile-wrapper {
+    background: transparent;
+}
+
+[data-theme="dark"] .profile-card {
+    background: var(--bg-card) !important;
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .profile-header {
+    background: var(--bg-secondary) !important;
+    border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .profile-header h2 {
+    color: var(--text-light);
+}
+
+[data-theme="dark"] .profile-header svg {
+    color: var(--accent-primary);
+}
+
+[data-theme="dark"] .btn-edit {
+    background: var(--bg-tertiary) !important;
+    color: var(--text-light);
+    border: 2px solid var(--border-color);
+}
+
+[data-theme="dark"] .btn-edit:hover {
+    background: var(--bg-secondary) !important;
+    border-color: var(--accent-primary);
+}
+
+[data-theme="dark"] .profile-content {
+    background: transparent;
+}
+
+[data-theme="dark"] .form-group label {
+    color: var(--text-light);
+}
+
+[data-theme="dark"] .form-group label svg {
+    color: var(--accent-primary);
+}
+
+[data-theme="dark"] .form-group input,
+[data-theme="dark"] .form-group select {
+    background: var(--bg-tertiary) !important;
+    color: var(--text-light);
+    border: 2px solid var(--border-color);
+}
+
+[data-theme="dark"] .form-group input:focus,
+[data-theme="dark"] .form-group select:focus {
+    background: var(--bg-secondary) !important;
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+}
+
+[data-theme="dark"] .form-group input:disabled,
+[data-theme="dark"] .form-group select:disabled {
+    background: var(--bg-tertiary) !important;
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .profile-pic {
+    border-color: var(--accent-primary);
+    box-shadow: 0 8px 20px rgba(139, 92, 246, 0.3);
+}
+
+[data-theme="dark"] .profile-pic:hover {
+    box-shadow: 0 12px 30px rgba(139, 92, 246, 0.4);
+}
+
+[data-theme="dark"] .profile-pic-section {
+    background: transparent;
+}
+
+[data-theme="dark"] .profile-details {
+    background: transparent;
+}
+
+[data-theme="dark"] .btn-view {
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    border: none;
+    color: white;
+}
+
+/* Modal in dark mode */
+[data-theme="dark"] .modal {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+[data-theme="dark"] .modal-content {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .modal-header {
+    background: var(--bg-tertiary);
+    border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .modal-title {
+    color: var(--text-light);
+}
+
+[data-theme="dark"] .close-btn {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .close-btn:hover {
+    color: var(--text-light);
+}
+
+[data-theme="dark"] .modal-body {
+    background: var(--bg-card);
+}
+
+[data-theme="dark"] .modal-footer {
+    background: var(--bg-tertiary);
+    border-top: 1px solid var(--border-color);
+}
+
+/* Tabs */
+[data-theme="dark"] .tabs {
+    background: var(--bg-tertiary);
+    border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .tab-btn {
+    color: var(--text-secondary);
+    border-bottom: 2px solid transparent;
+}
+
+[data-theme="dark"] .tab-btn.active {
+    color: var(--accent-primary);
+    border-bottom-color: var(--accent-primary);
+}
+
+[data-theme="dark"] .tab-btn:hover {
+    color: var(--text-light);
+    background: var(--bg-card);
+}
+
+/* Alert messages */
+[data-theme="dark"] .alert {
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .alert-success {
+    background: rgba(16, 185, 129, 0.1);
+    border-color: #10b981;
+    color: #6ee7b7;
+}
+
+[data-theme="dark"] .alert-error {
+    background: rgba(239, 68, 68, 0.1);
+    border-color: #ef4444;
+    color: #fca5a5;
+}
+
+[data-theme="dark"] .alert-warning {
+    background: rgba(245, 158, 11, 0.1);
+    border-color: #f59e0b;
+    color: #fcd34d;
+}
+
+[data-theme="dark"] .alert-info {
+    background: rgba(59, 130, 246, 0.1);
+    border-color: #3b82f6;
+    color: #93c5fd;
+}
+
+/* Admin pages */
+[data-theme="dark"] .admin-sidebar {
+    background: var(--bg-card);
+    border-right: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .admin-menu-item {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .admin-menu-item:hover,
+[data-theme="dark"] .admin-menu-item.active {
+    background: var(--bg-tertiary);
+    color: var(--accent-primary);
+}
+
+/* Login/Register pages */
+[data-theme="dark"] .auth-container {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .auth-header {
+    color: var(--text-light);
+}
+
+[data-theme="dark"] .auth-subtext {
+    color: var(--text-tertiary);
+}
+
+[data-theme="dark"] .form-footer {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .form-link {
+    color: var(--accent-primary);
+}
+
+[data-theme="dark"] .form-link:hover {
+    color: var(--accent-secondary);
+}
+
+/* ===== Page Header & Dashboard Header Dark Mode ===== */
+[data-theme="dark"] .page-header,
+[data-theme="dark"] .dashboard-header {
+    background: rgba(102, 126, 234, 0.08);
+    border-left-color: var(--accent-primary);
+}
+
+[data-theme="dark"] .page-header h1,
+[data-theme="dark"] .dashboard-header h1 {
+    color: var(--text-light);
+}
+
+[data-theme="dark"] .page-header svg,
+[data-theme="dark"] .dashboard-header svg {
+    color: var(--accent-primary);
+}
+
+/* ===== Section Header Dark Mode ===== */
+[data-theme="dark"] .section-header {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .section-header h2 {
+    color: var(--text-light);
+}
+
+[data-theme="dark"] .section-header svg {
+    color: var(--accent-primary);
+}
+
+/* ===== Stat Cards Dark Mode ===== */
+[data-theme="dark"] .stat-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .stat-label {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .stat-value {
+    color: var(--text-light);
+}
+

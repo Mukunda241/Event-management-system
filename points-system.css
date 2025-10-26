@@ -1,0 +1,389 @@
+/* 🏆 POINTS SYSTEM STYLING */
+
+/* Points Notification */
+.points-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 16px 24px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
+    z-index: 10000;
+    opacity: 0;
+    transform: translateX(400px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.points-notification.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.points-notification-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.points-icon {
+    font-size: 32px;
+    animation: bounce 0.6s ease-in-out;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.points-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.points-amount {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.points-description {
+    font-size: 14px;
+    opacity: 0.9;
+    margin: 0;
+}
+
+/* Leaderboard Enhancements */
+.current-user-row {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%) !important;
+    border-left: 4px solid #667eea;
+}
+
+.current-user-row.highlight {
+    animation: highlight-pulse 2s ease-in-out;
+}
+
+@keyframes highlight-pulse {
+    0%, 100% { background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%); }
+    50% { background: linear-gradient(135deg, rgba(102, 126, 234, 0.3) 0%, rgba(118, 75, 162, 0.3) 100%); }
+}
+
+.you-badge {
+    background: #667eea;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    margin-left: 8px;
+    letter-spacing: 0.5px;
+}
+
+.organizer-badge {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    margin-left: 8px;
+    letter-spacing: 0.5px;
+    display: inline-block;
+}
+
+/* Achievement Badges */
+.achievement-badge {
+    display: inline-block;
+    font-size: 18px;
+    margin-left: 4px;
+    cursor: help;
+    transition: transform 0.2s ease;
+}
+
+.achievement-badge:hover {
+    transform: scale(1.2);
+}
+
+/* Rank Medals */
+.rank-medal {
+    font-size: 24px;
+    margin-right: 8px;
+}
+
+.rank-medal.gold {
+    animation: gold-shine 2s ease-in-out infinite;
+}
+
+.rank-medal.silver {
+    animation: silver-shine 2s ease-in-out infinite;
+}
+
+.rank-medal.bronze {
+    animation: bronze-shine 2s ease-in-out infinite;
+}
+
+@keyframes gold-shine {
+    0%, 100% { filter: brightness(1); }
+    50% { filter: brightness(1.3) drop-shadow(0 0 8px gold); }
+}
+
+@keyframes silver-shine {
+    0%, 100% { filter: brightness(1); }
+    50% { filter: brightness(1.3) drop-shadow(0 0 8px silver); }
+}
+
+@keyframes bronze-shine {
+    0%, 100% { filter: brightness(1); }
+    50% { filter: brightness(1.3) drop-shadow(0 0 8px #cd7f32); }
+}
+
+/* User Rank Info Card */
+.user-rank-info {
+    margin-bottom: 24px;
+}
+
+.rank-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3);
+}
+
+.rank-card h3 {
+    margin: 0 0 16px 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.rank-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.rank-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+}
+
+.rank-label {
+    font-size: 12px;
+    opacity: 0.8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.rank-value {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/* Leaderboard Table Styling */
+.rank-cell {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+}
+
+.rank-number {
+    font-size: 16px;
+}
+
+.user-cell {
+    font-weight: 500;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.user-name {
+    font-weight: 600;
+}
+
+.points-cell {
+    font-weight: 700;
+    color: #667eea;
+    font-size: 18px;
+}
+
+.points-value {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stat-cell {
+    color: #666;
+}
+
+/* Sort Buttons */
+.sort-btn {
+    padding: 8px 16px;
+    border: 2px solid #e0e0e0;
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.sort-btn:hover {
+    border-color: #667eea;
+    color: #667eea;
+}
+
+.sort-btn.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-color: transparent;
+}
+
+/* Points History */
+.history-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border-bottom: 1px solid #e0e0e0;
+    transition: background 0.2s ease;
+}
+
+.history-item:hover {
+    background: #f5f5f5;
+}
+
+.history-icon {
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f0f0;
+    border-radius: 50%;
+}
+
+.history-details {
+    flex: 1;
+}
+
+.history-description {
+    margin: 0 0 4px 0;
+    font-weight: 500;
+    color: #333;
+}
+
+.history-date {
+    font-size: 12px;
+    color: #999;
+}
+
+.history-points {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.points-positive {
+    color: #27ae60;
+}
+
+.points-negative {
+    color: #e74c3c;
+}
+
+.no-history {
+    text-align: center;
+    padding: 40px;
+    color: #999;
+    font-style: italic;
+}
+
+/* Points Animation on Stats */
+.stat-value {
+    transition: all 0.3s ease;
+}
+
+.stat-value.points-updated {
+    animation: points-pop 0.5s ease;
+}
+
+@keyframes points-pop {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); color: #667eea; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .points-notification {
+        right: 10px;
+        left: 10px;
+        top: 10px;
+    }
+    
+    .rank-details {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+    
+    .rank-item {
+        padding: 8px;
+    }
+    
+    .rank-value {
+        font-size: 18px;
+    }
+    
+    .points-amount {
+        font-size: 16px;
+    }
+}
+
+/* Dark Mode Support */
+body.dark-mode .points-notification {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+body.dark-mode .current-user-row {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%) !important;
+}
+
+body.dark-mode .rank-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+body.dark-mode .history-item {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .history-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .history-icon {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .sort-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+body.dark-mode .sort-btn:hover {
+    border-color: #667eea;
+}

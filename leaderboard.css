@@ -1,0 +1,455 @@
+/* Leaderboard Page Specific Styles */
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Page Hero Section */
+.page-hero {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    text-align: center;
+    padding: 60px 20px 40px;
+    margin-bottom: 30px;
+    animation: fadeInDown 0.6s ease-out;
+}
+
+.page-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.page-hero p {
+    font-size: 1.1rem;
+    opacity: 0.95;
+}
+
+/* Leaderboard Wrapper */
+.leaderboard-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.leaderboard-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    padding: 25px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.leaderboard-header h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    color: #2d3748;
+    margin: 0;
+}
+
+.leaderboard-header svg {
+    width: 28px;
+    height: 28px;
+    color: #0073e6;
+}
+
+/* Sort Options */
+.sort-options {
+    display: flex;
+    gap: 10px;
+}
+
+.sort-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    color: #4a5568;
+    border: 2px solid #e2e8f0;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.sort-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+.sort-btn:hover {
+    background: #f7fafc;
+    border-color: #0073e6;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 115, 230, 0.2);
+}
+
+.sort-btn.active {
+    background: linear-gradient(135deg, #0073e6, #005bb5);
+    color: white;
+    border-color: #0073e6;
+}
+
+/* Leaderboard Container */
+.leaderboard-container {
+    background: white;
+    border-radius: 15px;
+    padding: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+    overflow: hidden;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background: linear-gradient(135deg, #0073e6, #005bb5);
+    color: white;
+}
+
+th {
+    padding: 20px 15px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+th:first-child {
+    padding-left: 30px;
+}
+
+tbody tr {
+    border-bottom: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+tbody tr:hover {
+    background: linear-gradient(135deg, #f7fafc, #edf2f7);
+    transform: scale(1.01);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+tbody tr:last-child {
+    border-bottom: none;
+}
+
+td {
+    padding: 20px 15px;
+    text-align: left;
+    color: #2d3748;
+    font-size: 0.95rem;
+}
+
+td:first-child {
+    padding-left: 30px;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+/* Rank Styling */
+tbody tr:nth-child(1) td:first-child {
+    color: #FFD700;
+    font-size: 1.5rem;
+}
+
+/* Removed duplicate medal from CSS - now handled by JavaScript */
+
+tbody tr:nth-child(2) td:first-child {
+    color: #C0C0C0;
+    font-size: 1.4rem;
+}
+
+/* Removed duplicate medal from CSS - now handled by JavaScript */
+
+tbody tr:nth-child(3) td:first-child {
+    color: #CD7F32;
+    font-size: 1.3rem;
+}
+
+/* Removed duplicate medal from CSS - now handled by JavaScript */
+
+/* Rating and Visitors Styling */
+td:nth-child(3) {
+    font-weight: 600;
+    color: #0073e6;
+}
+
+/* Removed emoji - replaced with icons in JavaScript */
+
+/* Removed emoji - replaced with icons in JavaScript */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .page-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .leaderboard-header {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+    
+    .leaderboard-header h2 {
+        justify-content: center;
+        font-size: 1.3rem;
+    }
+    
+    .sort-options {
+        justify-content: center;
+    }
+    
+    table {
+        font-size: 0.85rem;
+    }
+    
+    th, td {
+        padding: 12px 10px;
+    }
+    
+    th:first-child,
+    td:first-child {
+        padding-left: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-hero h1 {
+        font-size: 1.5rem;
+    }
+    
+    .sort-btn {
+        font-size: 0.85rem;
+        padding: 8px 15px;
+    }
+    
+    table {
+        font-size: 0.75rem;
+    }
+    
+    th, td {
+        padding: 10px 8px;
+    }
+}
+
+/* Glowing Medal Animations */
+@keyframes goldGlow {
+    0%, 100% {
+        filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.8));
+        transform: scale(1);
+    }
+    50% {
+        filter: drop-shadow(0 0 16px rgba(255, 215, 0, 1));
+        transform: scale(1.1);
+    }
+}
+
+@keyframes silverGlow {
+    0%, 100% {
+        filter: drop-shadow(0 0 8px rgba(192, 192, 192, 0.8));
+        transform: scale(1);
+    }
+    50% {
+        filter: drop-shadow(0 0 16px rgba(192, 192, 192, 1));
+        transform: scale(1.1);
+    }
+}
+
+@keyframes bronzeGlow {
+    0%, 100% {
+        filter: drop-shadow(0 0 8px rgba(205, 127, 50, 0.8));
+        transform: scale(1);
+    }
+    50% {
+        filter: drop-shadow(0 0 16px rgba(205, 127, 50, 1));
+        transform: scale(1.1);
+    }
+}
+
+.rank-medal-glow {
+    display: inline-block;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.gold-glow {
+    animation-name: goldGlow;
+}
+
+.silver-glow {
+    animation-name: silverGlow;
+}
+
+.bronze-glow {
+    animation-name: bronzeGlow;
+}
+
+/* Professional Rank Badges */
+.rank-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    font-size: 20px;
+    animation: badgePulse 2s ease-in-out infinite;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.rank-badge:hover {
+    transform: scale(1.15);
+}
+
+.rank-badge.rank-1 {
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    color: #fff;
+    box-shadow: 0 4px 20px rgba(255, 215, 0, 0.6);
+}
+
+.rank-badge.rank-2 {
+    background: linear-gradient(135deg, #C0C0C0, #A8A8A8);
+    color: #fff;
+    box-shadow: 0 4px 20px rgba(192, 192, 192, 0.6);
+}
+
+.rank-badge.rank-3 {
+    background: linear-gradient(135deg, #CD7F32, #B8860B);
+    color: #fff;
+    box-shadow: 0 4px 20px rgba(205, 127, 50, 0.6);
+}
+
+@keyframes badgePulse {
+    0%, 100% {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 4px 25px rgba(255, 215, 0, 0.8);
+        transform: scale(1.05);
+    }
+}
+
+.rank-badge.rank-1 {
+    animation: goldBadgePulse 2s ease-in-out infinite;
+}
+
+.rank-badge.rank-2 {
+    animation: silverBadgePulse 2s ease-in-out infinite;
+}
+
+.rank-badge.rank-3 {
+    animation: bronzeBadgePulse 2s ease-in-out infinite;
+}
+
+@keyframes goldBadgePulse {
+    0%, 100% {
+        box-shadow: 0 4px 20px rgba(255, 215, 0, 0.6);
+    }
+    50% {
+        box-shadow: 0 6px 30px rgba(255, 215, 0, 0.9);
+    }
+}
+
+@keyframes silverBadgePulse {
+    0%, 100% {
+        box-shadow: 0 4px 20px rgba(192, 192, 192, 0.6);
+    }
+    50% {
+        box-shadow: 0 6px 30px rgba(192, 192, 192, 0.9);
+    }
+}
+
+@keyframes bronzeBadgePulse {
+    0%, 100% {
+        box-shadow: 0 4px 20px rgba(205, 127, 50, 0.6);
+    }
+    50% {
+        box-shadow: 0 6px 30px rgba(205, 127, 50, 0.9);
+    }
+}
+
+/* Modern Numbered Rank Badges */
+.rank-badge-modern {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 14px;
+    margin-right: 10px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    animation: modernBadgeGlow 2s ease-in-out infinite;
+    transition: all 0.3s ease;
+}
+
+.rank-badge-modern:hover {
+    transform: translateY(-2px);
+}
+
+.rank-badge-modern.rank-1-modern {
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.5);
+    border: 2px solid #FFD700;
+}
+
+.rank-badge-modern.rank-2-modern {
+    background: linear-gradient(135deg, #E8E8E8 0%, #C0C0C0 100%);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(192, 192, 192, 0.5);
+    border: 2px solid #C0C0C0;
+}
+
+.rank-badge-modern.rank-3-modern {
+    background: linear-gradient(135deg, #E5A572 0%, #CD7F32 100%);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(205, 127, 50, 0.5);
+    border: 2px solid #CD7F32;
+}
+
+@keyframes modernBadgeGlow {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.85;
+    }
+}
