@@ -69,7 +69,7 @@ app.get("/", (req, res) => {
 
 // MongoDB connection, schema definitions
 // Allow overriding MongoDB connection string with MONGODB_URI env var for production hosts
-mongoose.connect(process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/event_management")
+mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://mukundasamudrala_db_user:Mukunda9393@cluster0.zsaejaw.mongodb.net/event_management_system?retryWrites=true&w=majority&appName=Cluster0")
   .then(() => console.log("✅ MongoDB connected successfully!"))
   .catch(err => console.error("❌ MongoDB connction error:", err));
 
