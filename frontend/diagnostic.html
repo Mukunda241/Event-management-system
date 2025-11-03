@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deployment Diagnostic</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        .status {
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid;
+        }
+        .loading {
+            background: #fff3cd;
+            border-color: #ffc107;
+        }
+        .success {
+            background: #d4edda;
+            border-color: #28a745;
+        }
+        .error {
+            background: #f8d7da;
+            border-color: #dc3545;
+        }
+        .test-btn {
+            background: #667eea;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+        }
+        .test-btn:hover {
+            background: #5568d3;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 14px;
+        }
+        .alert {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .alert h3 {
+            margin-top: 0;
+            color: #856404;
+        }
+        ul {
+            line-height: 1.8;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Deployment Diagnostic Tool</h1>
+        <p>This page will help diagnose why your login is not working on Render.</p>
+
+        <div class="alert">
+            <h3>⚠️ Most Common Issue: MongoDB Not Connected</h3>
+            <p>Your backend is deployed but <strong>cannot connect to a database</strong> because:</p>
+            <ul>
+                <li>Render doesn't provide a local MongoDB server</li>
+                <li>You need to set up <strong>MongoDB Atlas</strong> (cloud database)</li>
+                <li>Environment variables are not configured on Render</li>
+            </ul>
+        </div>
+
+        <h2>Test 1: Backend Health Check</h2>
+        <button class="test-btn" onclick="testBackendHealth()">Test Backend</button>
+        <div id="healthResult" class="status loading">Click button to test...</div>
+
+        <h2>Test 2: Login API</h2>
+        <button class="test-btn" onclick="testLoginAPI()">Test Login Endpoint</button>
+        <div id="loginResult" class="status loading">Click button to test...</div>
+
+        <h2>Test 3: API Configuration</h2>
+        <button class="test-btn" onclick="showAPIConfig()">Show Config</button>
+        <div id="configResult" class="status loading">Click button to test...</div>
+
+        <h2>📋 What You Need To Do:</h2>
+        <div style="background: #e7f3ff; padding: 20px; border-radius: 10px; border-left: 4px solid #0066cc;">
+            <h3 style="margin-top: 0; color: #0066cc;">Step 1: Create MongoDB Atlas (5 minutes)</h3>
+            <ol style="line-height: 2;">
+                <li>Go to: <a href="https://www.mongodb.com/cloud/atlas/register" target="_blank">https://www.mongodb.com/cloud/atlas/register</a></li>
+                <li>Sign up for FREE (no credit card)</li>
+                <li>Create a FREE cluster (M0 tier)</li>
+                <li>Create database user & save password</li>
+                <li>Whitelist all IPs: <code>0.0.0.0/0</code></li>
+                <li>Get connection string</li>
+            </ol>
+
+            <h3 style="color: #0066cc;">Step 2: Configure Render (2 minutes)</h3>
+            <ol style="line-height: 2;">
+                <li>Go to: <a href="https://dashboard.render.com/" target="_blank">Render Dashboard</a></li>
+                <li>Click your backend: <code>event-management-system-6lyo</code></li>
+                <li>Click "Environment" tab</li>
+                <li>Add variable: <code>MONGODB_URI</code> = (your MongoDB connection string)</li>
+                <li>Add variable: <code>FRONTEND_URL</code> = <code>https://event-management-system-0uwx.onrender.com</code></li>
+                <li>Click "Save Changes"</li>
+                <li>Wait 2-3 minutes for redeploy</li>
+            </ol>
+
+            <h3 style="color: #0066cc;">Step 3: Test Again</h3>
+            <p>Come back to this page and click the test buttons again!</p>
+        </div>
+
+        <h2>📚 Detailed Guides</h2>
+        <ul>
+            <li><a href="https://github.com/Mukunda241/Event-management-system/blob/main/URGENT_FIX.md" target="_blank">URGENT_FIX.md</a> - Complete fix guide</li>
+            <li><a href="https://github.com/Mukunda241/Event-management-system/blob/main/MONGODB_SETUP.md" target="_blank">MONGODB_SETUP.md</a> - MongoDB setup tutorial</li>
+            <li><a href="https://github.com/Mukunda241/Event-management-system/blob/main/DEPLOYMENT_ACTION_PLAN.md" target="_blank">DEPLOYMENT_ACTION_PLAN.md</a> - Full action plan</li>
+        </ul>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script>
+        async function testBackendHealth() {
+            const resultDiv = document.getElementById('healthResult');
+            resultDiv.className = 'status loading';
+            resultDiv.innerHTML = '⏳ Testing backend...';
+
+            try {
+                const response = await fetch('https://event-management-system-6lyo.onrender.com/', {
+                    method: 'GET'
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    resultDiv.className = 'status success';
+                    resultDiv.innerHTML = `
+                        ✅ <strong>Backend is running!</strong><br>
+                        <pre>${JSON.stringify(data, null, 2)}</pre>
+                        <p>But this doesn't mean MongoDB is connected. Check login test below.</p>
+                    `;
+                } else {
+                    resultDiv.className = 'status error';
+                    resultDiv.innerHTML = `❌ Backend returned error: ${response.status}`;
+                }
+            } catch (error) {
+                resultDiv.className = 'status error';
+                resultDiv.innerHTML = `
+                    ❌ <strong>Cannot reach backend!</strong><br>
+                    Error: ${error.message}<br>
+                    <p>Backend might be down or sleeping (Render free tier sleeps after inactivity)</p>
+                `;
+            }
+        }
+
+        async function testLoginAPI() {
+            const resultDiv = document.getElementById('loginResult');
+            resultDiv.className = 'status loading';
+            resultDiv.innerHTML = '⏳ Testing login endpoint...';
+
+            try {
+                const response = await fetch('https://event-management-system-6lyo.onrender.com/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        username: 'test',
+                        password: 'test'
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (response.status === 500) {
+                    resultDiv.className = 'status error';
+                    resultDiv.innerHTML = `
+                        ❌ <strong>500 Internal Server Error - MongoDB NOT Connected!</strong><br>
+                        <pre>${JSON.stringify(data, null, 2)}</pre>
+                        <p><strong>This confirms the issue:</strong> Your backend cannot connect to MongoDB.</p>
+                        <p><strong>Solution:</strong> Follow the steps above to set up MongoDB Atlas and configure Render environment variables.</p>
+                    `;
+                } else if (response.status === 401 || response.status === 404) {
+                    resultDiv.className = 'status success';
+                    resultDiv.innerHTML = `
+                        ✅ <strong>API is working! MongoDB is connected!</strong><br>
+                        <pre>${JSON.stringify(data, null, 2)}</pre>
+                        <p>The error above is expected (user doesn't exist), but it proves the database connection works!</p>
+                        <p>Your login should work now. Try creating an account first, then login.</p>
+                    `;
+                } else {
+                    resultDiv.className = 'status error';
+                    resultDiv.innerHTML = `
+                        ⚠️ <strong>Unexpected response: ${response.status}</strong><br>
+                        <pre>${JSON.stringify(data, null, 2)}</pre>
+                    `;
+                }
+            } catch (error) {
+                resultDiv.className = 'status error';
+                resultDiv.innerHTML = `
+                    ❌ <strong>Network Error!</strong><br>
+                    Error: ${error.message}<br>
+                    <p>This could be a CORS issue or backend is down.</p>
+                `;
+            }
+        }
+
+        function showAPIConfig() {
+            const resultDiv = document.getElementById('configResult');
+            resultDiv.className = 'status success';
+            
+            const config = typeof API_CONFIG !== 'undefined' ? API_CONFIG : 'API_CONFIG not loaded';
+            
+            resultDiv.innerHTML = `
+                <strong>Current API Configuration:</strong><br>
+                <pre>${JSON.stringify({
+                    LOCAL_API_URL: config.LOCAL_API_URL || 'Not defined',
+                    PRODUCTION_API_URL: config.PRODUCTION_API_URL || 'Not defined',
+                    BASE_URL: config.BASE_URL || 'Not defined',
+                    currentHostname: window.location.hostname,
+                    isLocalhost: window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+                }, null, 2)}</pre>
+                <p><strong>Backend URL being used:</strong> ${config.BASE_URL || 'Error: config not loaded'}</p>
+            `;
+        }
+    </script>
+</body>
+</html>
