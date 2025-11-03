@@ -1,0 +1,288 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Register</title>
+  <link rel="stylesheet" href="css/login.css" />
+      <script src="js/config.js"></script>
+    <script src="js/register.js" defer></script>
+    <link rel="stylesheet" href="css/icon-animations.css">
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-box">
+      <h1><b>REGISTER</b></h1>
+      <form id="registerForm">
+        <div class="input-group">
+          <input type="text" id="username" required autocomplete="username" placeholder=" " />
+          <label for="username">Username</label>
+        </div>
+        <div class="input-group">
+          <input type="password" id="password" required autocomplete="new-password" placeholder=" " />
+          <label for="password">Password</label>
+        </div>
+        <button type="submit">Sign Up</button>
+      </form>
+      <div id="registerMessage"></div>
+      <div class="extra-links">
+        <a href="login.html">Back to Login</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html> -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Create Account</title>
+  <link rel="stylesheet" href="auth.css" />
+      <script src="js/config.js"></script>
+    <script src="js/register.js" defer></script>
+</head>
+<body>
+  <div class="auth-container">
+    <div class="auth-box">
+      <h1>Create Account</h1>
+      <form id="registerForm">
+        <div class="input-group">
+          <input type="text" id="username" name="username" required autocomplete="username" placeholder=" " />
+          <label for="username">Username</label>
+        </div>
+        <div class="input-group">
+          <input type="password" id="password" name="password" required autocomplete="new-password" placeholder=" " />
+          <label for="password">Password</label>
+        </div>
+        <button type="submit">Sign Up</button>
+      </form>
+      <div class="message" id="registerMessage"></div>
+      <p class="extra-links">
+        <a href="login.html">&larr; Back to login</a>
+      </p>
+    </div>
+  </div>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Create Account - Event Management System</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="auth.css" />
+  <link rel="stylesheet" href="css/dark-mode.css" />
+  <script src="js/dark-mode.js"></script>
+      <script src="js/config.js"></script>
+    <script src="js/register.js" defer></script>
+</head>
+<body>
+  <!-- Animated Background with different style -->
+  <div class="register-bg">
+    <div class="particle particle-1"></div>
+    <div class="particle particle-2"></div>
+    <div class="particle particle-3"></div>
+    <div class="particle particle-4"></div>
+    <div class="particle particle-5"></div>
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+  </div>
+
+  <div class="register-wrapper">
+    <!-- Top Header Banner -->
+    <header class="register-header">
+      <div class="header-content">
+        <div class="logo-section">
+          <svg class="logo-icon-small" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 4H5C3.89543 4 3 4.89543 3 6V20C3 21.1046 3.89543 22 5 22H19C20.1046 22 21 21.1046 21 20V6C21 4.89543 20.1046 4 19 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M16 2V6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M8 2V6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M3 10H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="logo-text">EventPulse</span>
+        </div>
+        <a href="login.html" class="back-to-login">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z"/>
+          </svg>
+          Back to Login
+        </a>
+      </div>
+    </header>
+
+    <!-- Main Content: Centered Form with Side Info -->
+    <main class="register-main">
+      <div class="register-container">
+        <!-- Registration Card -->
+        <div class="register-card">
+          <div class="card-header">
+            <h1>Create Your Account</h1>
+            <p class="subtitle">Join thousands of event enthusiasts today</p>
+          </div>
+
+          <form id="registerForm" class="register-form">
+            <!-- Personal Info Section -->
+            <div class="form-section">
+              <h3 class="section-title">
+                <span class="section-icon"><i class="fas fa-user"></i></span>
+                Personal Information
+              </h3>
+              
+              <div class="form-row">
+                <div class="input-wrapper">
+                  <input type="text" id="fullName" name="fullName" required autocomplete="name" />
+                  <label for="fullName">Full Name</label>
+                  <div class="input-border"></div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="input-wrapper">
+                  <input type="email" id="email" name="email" required autocomplete="email" />
+                  <label for="email">Email Address</label>
+                  <div class="input-border"></div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="input-wrapper">
+                  <input type="text" id="username" name="username" required autocomplete="username" />
+                  <label for="username">Username</label>
+                  <div class="input-border"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Security Section -->
+            <div class="form-section">
+              <h3 class="section-title">
+                <span class="section-icon"><i class="fas fa-lock"></i></span>
+                Security
+              </h3>
+
+              <div class="form-row form-row-half">
+                <div class="input-wrapper">
+                  <input type="password" id="password" name="password" required autocomplete="new-password" />
+                  <label for="password">Password</label>
+                  <div class="input-border"></div>
+                </div>
+                <div class="input-wrapper">
+                  <input type="password" id="confirmPassword" name="confirmPassword" required autocomplete="new-password" />
+                  <label for="confirmPassword">Confirm Password</label>
+                  <div class="input-border"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Role Section -->
+            <div class="form-section">
+              <h3 class="section-title">
+                <span class="section-icon"><i class="fas fa-bullseye"></i></span>
+                Choose Your Role
+              </h3>
+
+              <div class="role-grid">
+                <label class="role-card-large">
+                  <input type="radio" name="role" value="user" checked />
+                  <div class="role-content">
+                    <div class="role-icon-large"><i class="fas fa-user"></i></div>
+                    <h4>Event Attendee</h4>
+                    <p>Discover events, connect with people, and create lasting memories</p>
+                    <ul class="role-features">
+                      <li>✔ Browse unlimited events</li>
+                      <li>✔ Save favorites</li>
+                      <li>✔ RSVP & track attendance</li>
+                    </ul>
+                  </div>
+                  <div class="role-checkmark">✔</div>
+                </label>
+
+                <label class="role-card-large">
+                  <input type="radio" name="role" value="manager" />
+                  <div class="role-content">
+                    <div class="role-icon-large"><i class="fas fa-users-cog"></i></div>
+                    <h4>Event Organizer</h4>
+                    <p>Create, manage, and promote your events with powerful tools</p>
+                    <ul class="role-features">
+                      <li>✔ Create unlimited events</li>
+                      <li>✔ Analytics dashboard</li>
+                      <li>✔ Attendee management</li>
+                    </ul>
+                    <div style="margin-top: 10px; padding: 8px; background: #fef3c7; border-left: 3px solid #f59e0b; border-radius: 4px; font-size: 0.85em; color: #92400e;">
+                      <i class="fas fa-clock"></i> <strong>Requires admin approval</strong> - Your account will be reviewed before activation
+                    </div>
+                  </div>
+                  <div class="role-checkmark">✔</div>
+                </label>
+              </div>
+            </div>
+
+            <button type="submit" class="register-btn">
+              <span>Create My Account</span>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+              </svg>
+            </button>
+
+            <div id="registerMessage" role="alert" class="register-message"></div>
+          </form>
+          </form>
+
+          <div class="terms-notice">
+            <p>By creating an account, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></p>
+          </div>
+        </div>
+
+        <!-- Side Benefits Panel -->
+        <aside class="benefits-panel">
+          <h2>Why Join EventPulse?</h2>
+          <div class="benefit-item">
+            <div class="benefit-icon"><i class="fas fa-ticket-alt"></i></div>
+            <div>
+              <h4>Early Access</h4>
+              <p>Get notified about exclusive events before anyone else</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon"><i class="fas fa-trophy"></i></div>
+            <div>
+              <h4>Earn Rewards</h4>
+              <p>Collect points and climb the leaderboard</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon"><i class="fas fa-globe"></i></div>
+            <div>
+              <h4>Community</h4>
+              <p>Connect with like-minded event enthusiasts</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon"><i class="fas fa-chart-bar"></i></div>
+            <div>
+              <h4>Insights</h4>
+              <p>Track your event history and preferences</p>
+            </div>
+          </div>
+          
+          <div class="testimonial">
+            <p>"EventPulse transformed how I discover and attend events. Highly recommended!"</p>
+            <div class="testimonial-author">
+              <strong>Sarah Johnson</strong>
+              <span>Active Member</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
+
+
+
+

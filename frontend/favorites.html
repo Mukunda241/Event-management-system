@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorite Events - EventPulse</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/favorites.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <link rel="stylesheet" href="css/toast.css">
+    <link rel="stylesheet" href="css/notifications.css">
+        <script src="js/config.js"></script>
+    <script src="js/dark-mode.js"></script>
+    <script src="js/toast.js"></script>
+    <script src="js/notifications.js"></script>
+    <script defer src="js/header-search.js"></script>
+    <script defer src="js/favorites.js"></script>
+    <link rel="stylesheet" href="css/icon-animations.css">
+</head>
+<body>
+    <!-- Modern Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-section">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 4H5C3.89543 4 3 4.89543 3 6V20C3 21.1046 3.89543 22 5 22H19C20.1046 22 21 21.1046 21 20V6C21 4.89543 20.1046 4 19 4Z" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M16 2V6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M8 2V6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M3 10H21" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="12" cy="15" r="2" fill="currentColor"/>
+                </svg>
+                <div>
+                    <div class="logo-text">EventPulse</div>
+                    <div class="logo-subtext">Discover. Engage. Celebrate.</div>
+                </div>
+            </div>
+            
+            <div class="search-container">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="M21 21l-4.35-4.35"/>
+                </svg>
+                <input type="text" placeholder="Search events..." class="search-bar">
+            </div>
+            
+            <div class="user-actions">
+                <button class="notification-btn" title="Notifications">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </button>
+                <button class="logout-btn" onclick="logout()">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+                        <polyline points="16 17 21 12 16 7"/>
+                        <line x1="21" y1="12" x2="9" y2="12"/>
+                    </svg>
+                    Logout
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Modern Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-link">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="calendar.html" class="nav-link">
+                <i class="fas fa-calendar-alt"></i>
+                <span>Calendar</span>
+            </a>
+            <a href="favorites.html" class="nav-link active">
+                <i class="fas fa-heart"></i>
+                <span>Favorites</span>
+            </a>
+            <a href="leaderboard.html" class="nav-link">
+                <i class="fas fa-trophy"></i>
+                <span>Leaderboard</span>
+            </a>
+            <a href="events.html" class="nav-link">
+                <i class="fas fa-ticket-alt"></i>
+                <span>Events</span>
+            </a>
+            <a href="my-tickets.html" class="nav-link">
+                <i class="fas fa-qrcode"></i>
+                <span>My Tickets</span>
+            </a>
+            <a href="profile.html" class="nav-link">
+                <i class="fas fa-user-circle"></i>
+                <span>Profile</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page Hero -->
+        <section class="page-hero">
+            <div class="hero-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+            </div>
+            <h1>Favorite Events</h1>
+            <p>Your curated collection of beloved events</p>
+        </section>
+
+        <!-- Favorites Section -->
+        <div class="content-wrapper">
+            <section class="favorites-section">
+                <div class="section-header">
+                    <div class="header-left">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                        <h2>My Favorites</h2>
+                        <span class="event-count-badge" id="favorites-badge">0</span>
+                    </div>
+                    <div class="filter-actions">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="upcoming">Upcoming</button>
+                        <button class="filter-btn" data-filter="completed">Completed</button>
+                    </div>
+                </div>
+                
+                <div id="favorite-events" class="events-grid"></div>
+                
+                <div id="favorites-empty" class="empty-state">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                    </svg>
+                    <h3>No Favorite Events Yet</h3>
+                    <p>Start adding events to your favorites to see them here</p>
+                    <a href="events.html" class="primary-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                        Explore Events
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Modern Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">Help Center</a>
+                <a href="#">Feedback</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+            <p>&copy; 2025 EventPulse. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function logout() {
+            localStorage.clear();
+            window.location.href = "login.html";
+        }
+    </script>
+    
+    <!-- Points System -->
+    <script src="js/points-system.js"></script>
+    <link rel="stylesheet" href="css/points-system.css">
+</body>
+</html>
+
+

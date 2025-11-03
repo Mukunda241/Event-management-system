@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - EventPulse</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <link rel="stylesheet" href="css/toast.css">
+    <link rel="stylesheet" href="css/notifications.css">
+        <script src="js/config.js"></script>
+    <script src="js/dark-mode.js"></script>
+    <script src="js/toast.js"></script>
+    <script src="js/notifications.js"></script>
+    <script defer src="js/header-search.js"></script>
+    <script defer src="js/profile.js"></script>
+    <link rel="stylesheet" href="css/icon-animations.css">
+</head>
+<body>
+    <!-- Modern Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-section">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 4H5C3.89543 4 3 4.89543 3 6V20C3 21.1046 3.89543 22 5 22H19C20.1046 22 21 21.1046 21 20V6C21 4.89543 20.1046 4 19 4Z" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M16 2V6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M8 2V6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M3 10H21" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="12" cy="15" r="2" fill="currentColor"/>
+                </svg>
+                <div>
+                    <div class="logo-text">EventPulse</div>
+                    <div class="logo-subtext">Discover. Engage. Celebrate.</div>
+                </div>
+            </div>
+            
+            <div class="search-container">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="M21 21l-4.35-4.35"/>
+                </svg>
+                <input type="text" placeholder="Search events..." class="search-bar">
+            </div>
+            
+            <div class="user-actions">
+                <button class="notification-btn" title="Notifications">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </button>
+                <button class="logout-btn" onclick="logout()">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+                        <polyline points="16 17 21 12 16 7"/>
+                        <line x1="21" y1="12" x2="9" y2="12"/>
+                    </svg>
+                    Logout
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Modern Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-link">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="calendar.html" class="nav-link">
+                <i class="fas fa-calendar-alt"></i>
+                <span>Calendar</span>
+            </a>
+            <a href="favorites.html" class="nav-link">
+                <i class="fas fa-heart"></i>
+                <span>Favorites</span>
+            </a>
+            <a href="leaderboard.html" class="nav-link">
+                <i class="fas fa-trophy"></i>
+                <span>Leaderboard</span>
+            </a>
+            <a href="events.html" class="nav-link">
+                <i class="fas fa-ticket-alt"></i>
+                <span>Events</span>
+            </a>
+            <a href="my-tickets.html" class="nav-link">
+                <i class="fas fa-qrcode"></i>
+                <span>My Tickets</span>
+            </a>
+            <a href="profile.html" class="nav-link active">
+                <i class="fas fa-user-circle"></i>
+                <span>Profile</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <section class="page-hero">
+            <h1>My Profile</h1>
+            <p>Manage your account settings and preferences</p>
+        </section>
+
+        <div class="profile-wrapper">
+            <div class="profile-card">
+                <div class="profile-header">
+                    <h2>
+                        <i class="fas fa-user-circle"></i>
+                        Profile Information
+                    </h2>
+                    <div class="action-buttons">
+                        <button id="editBtn" class="btn-edit" onclick="toggleEdit()">
+                            <i class="fas fa-edit"></i>
+                            Edit
+                        </button>
+                        <button id="saveBtn" class="btn-save" onclick="saveProfile()" style="display:none;">
+                            <i class="fas fa-save"></i>
+                            Save
+                        </button>
+                    </div>
+                </div>
+
+                <div class="profile-content">
+                    <div class="profile-pic-section">
+                        <div class="profile-pic">
+                            <img id="profileImage" src="https://in.images.search.yahoo.com/images/view;_ylt=AwrKEZeYEttn8awt9t.9HAx.;_ylu=c2VjA3NyBHNsawNpbWcEb2lkAzZlODU4YTYzZmRkZmYzMDNiMGFjOTE4OWM3ZDVkYThlBGdwb3MDMTYEaXQDYmluZw--?back=https%3A%2F%2Fin.images.search.yahoo.com%2Fsearch%2Fimages%3Fp%3Dunknown%2Bprofile%2Bpic%26type%3DE210IN660G0%26fr%3Dmcafee%26fr2%3Dpiv-web%26tab%3Dorganic%26ri%3D16&w=360&h=360&imgurl=t3.ftcdn.net%2Fjpg%2F03%2F53%2F11%2F00%2F360_F_353110097_nbpmfn9iHlxef4EDIhXB1tdTD0lcWhG9.jpg&rurl=https%3A%2F%2Fstock.adobe.com%2Fat%2Fsearch%3Fk%3Dunknown%2520avatar&size=6KB&p=unknown+profile+pic&oid=6e858a63fddff303b0ac9189c7d5da8e&fr2=piv-web&fr=mcafee&tt=Unknown+Avatar+Bilder+%E2%80%93+Durchsuchen+3%2C706+Archivfotos%2C+Vektorgrafiken+...&b=0&ni=21&no=16&ts=&tab=organic&sigr=kFn_9ZQbk5YL&sigb=x59VskPouUSe&sigi=9RZKY7Pig.r_&sigt=isVmuBlyiTYY&.crumb=9Xh12dInSyX&fr=mcafee&fr2=piv-web&type=E210IN660G0" alt="Profile Picture">
+                            <div class="image-overlay">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+                                    <circle cx="12" cy="13" r="4"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <input type="file" id="uploadImage" accept="image/*" disabled style="display: none;">
+                    </div>
+
+                    <div class="profile-details">
+                        <div class="form-group">
+                            <label for="name">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="12" cy="7" r="4"/>
+                                </svg>
+                                Full Name
+                            </label>
+                            <input type="text" id="name" disabled placeholder="Enter your name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                                Email Address
+                            </label>
+                            <input type="email" id="email" disabled placeholder="Enter your email">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="role">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                    <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+                                </svg>
+                                Role
+                            </label>
+                            <select id="role" disabled>
+                                <option value="user">User</option>
+                                <option value="admin">Admin</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modern Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">Help Center</a>
+                <a href="#">Feedback</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+            <p>&copy; 2025 EventPulse. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function logout() {
+            localStorage.clear();
+            window.location.href = "login.html";
+        }
+    </script>
+    
+    <!-- Points System -->
+    <script src="js/points-system.js"></script>
+    <link rel="stylesheet" href="css/points-system.css">
+</body>
+</html>
+

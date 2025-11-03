@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Management System | Home</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind to use Inter font and custom colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#4f46e5', // Indigo-600 for primary actions
+                        'secondary': '#6366f1', // Indigo-500
+                        'accent': '#f97316', // Orange-500 for attention-grabbing elements
+                        'dark-bg': '#1f2937', // Gray-800
+                        'light-text': '#f3f4f6', // Gray-100
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles for smooth gradients and effects */
+        .hero-bg {
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+        }
+        .hero-bg-dark {
+            background: linear-gradient(135deg, #1f2937, #374151);
+        }
+    </style>
+    <script src="js/config.js"></script>
+</head>
+<body class="font-sans bg-gray-50 min-h-screen">
+
+    <!-- Header / Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo / Site Name (Top Left) -->
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-2xl font-extrabold text-primary rounded-lg p-2 transition duration-300 hover:bg-gray-100">
+                        Event<span class="text-accent">Manager</span>
+                    </a>
+                </div>
+
+                <!-- Login/Sign Up Buttons (Top Right) -->
+                <div class="flex space-x-4 items-center">
+                    <a href="login.html" class="px-4 py-2 text-sm font-semibold text-primary border border-primary rounded-full transition duration-300 hover:bg-primary hover:text-white shadow-md">
+                        Login / Sign UP
+                    </a>
+                    <!-- <a href="signup.html" class="px-4 py-2 text-sm font-semibold text-white bg-accent rounded-full transition duration-300 hover:bg-orange-600 shadow-lg hover:shadow-xl">
+                        Sign Up
+                    </a> -->
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. Hero Section: Primary Event Showcase -->
+        <section class="hero-bg py-20 sm:py-32 text-white shadow-xl">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight mb-4">
+                    The Ultimate Event Management Solution
+                </h1>
+                <p class="text-xl sm:text-2xl font-light opacity-90 max-w-3xl mx-auto mb-8">
+                    Seamlessly plan, promote, and execute your events with our powerful, all-in-one platform.
+                </p>
+                <div class="space-x-4">
+                    <a href="#features" class="inline-block px-8 py-3 text-lg font-semibold bg-accent text-white rounded-full transition duration-300 transform hover:scale-105 shadow-2xl">
+                        Explore Features
+                    </a>
+                    <!-- Assuming this links to the main application area for Event Managers -->
+                    <a href="login.html" class="inline-block px-8 py-3 text-lg font-semibold text-white border-2 border-white rounded-full transition duration-300 hover:bg-white hover:text-primary">
+                        Start Planning Now
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Features Section: Event Details -->
+        <section id="features" class="py-16 sm:py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">
+                        Simplify Every Step of Event Management
+                    </h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+                        From ticketing and registration to attendee communication, we cover it all.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+                    <!-- Feature Card 1 -->
+                    <div class="bg-white p-8 rounded-xl shadow-xl hover:shadow-2xl transition duration-300 border-t-4 border-primary">
+                        <svg class="h-10 w-10 text-primary mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2m-9 0V3h4v2m-4 0h4"/>
+                        </svg>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Ticketing & Registration</h3>
+                        <p class="text-gray-600">
+                            Create custom ticket types, manage RSVPs, and process payments securely and efficiently.
+                        </p>
+                    </div>
+
+                    <!-- Feature Card 2 -->
+                    <div class="bg-white p-8 rounded-xl shadow-xl hover:shadow-2xl transition duration-300 border-t-4 border-accent">
+                        <svg class="h-10 w-10 text-accent mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Real-Time Scheduling</h3>
+                        <p class="text-gray-600">
+                            Build interactive schedules, assign speakers, and allow attendees to customize their personal agendas.
+                        </p>
+                    </div>
+
+                    <!-- Feature Card 3 -->
+                    <div class="bg-white p-8 rounded-xl shadow-xl hover:shadow-2xl transition duration-300 border-t-4 border-secondary">
+                        <svg class="h-10 w-10 text-secondary mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"/>
+                        </svg>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Communication Hub</h3>
+                        <p class="text-gray-600">
+                            Send targeted emails, in-app notifications, and manage all attendee questions from one central location.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Call to Action (CTA) Section -->
+        <section class="hero-bg-dark py-16 sm:py-20 text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl sm:text-4xl font-extrabold mb-4">
+                    Ready to launch your next successful event?
+                </h2>
+                <p class="text-lg font-light opacity-90 mb-8">
+                    Join thousands of event organizers who trust our platform.
+                </p>
+                <a href="signup.html" class="inline-block px-10 py-4 text-xl font-bold bg-accent text-white rounded-lg transition duration-300 transform hover:scale-105 shadow-2xl">
+                    Get Started for Free
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
+            <p>&copy; 2024 EventManager. All rights reserved.</p>
+            <div class="mt-2 space-x-4">
+                <a href="#" class="hover:text-primary">Privacy Policy</a>
+                <span class="text-gray-500">|</span>
+                <a href="#" class="hover:text-primary">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
+
+
+

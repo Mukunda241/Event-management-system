@@ -1,0 +1,409 @@
+/* Transportation Hub Section Styles */
+.transportation-section {
+    margin: 60px auto;
+    padding: 40px;
+    max-width: 1400px;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 24px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.transportation-section .section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.transportation-section .section-header h2 {
+    font-size: 2.2rem;
+    background: linear-gradient(135deg, #7c3aed 0%, #c084fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.transportation-section .section-header h2 i {
+    -webkit-text-fill-color: #7c3aed;
+    font-size: 2rem;
+}
+
+.transportation-section .section-subtitle {
+    color: #64748b;
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Transportation Tabs */
+.transport-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    padding: 0 20px;
+}
+
+.transport-tab {
+    padding: 12px 24px;
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.transport-tab:hover {
+    border-color: #c084fc;
+    color: #7c3aed;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.15);
+}
+
+.transport-tab.active {
+    background: linear-gradient(135deg, #7c3aed 0%, #c084fc 100%);
+    border-color: #7c3aed;
+    color: white;
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.3);
+}
+
+.transport-tab i {
+    font-size: 1.1rem;
+}
+
+/* Transportation Container */
+.transportation-container {
+    padding: 20px;
+}
+
+/* Transport Grid */
+.transport-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+    margin-top: 30px;
+}
+
+/* Loading State */
+.loading-transport {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 20px;
+    color: #7c3aed;
+}
+
+.loading-transport i {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.loading-transport p {
+    font-size: 1.1rem;
+    color: #64748b;
+}
+
+/* Transport Card */
+.transport-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.transport-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(124, 58, 237, 0.2);
+    border-color: #c084fc;
+}
+
+/* Transport Icon Header */
+.transport-icon-header {
+    padding: 24px;
+    background: linear-gradient(135deg, #7c3aed 0%, #c084fc 100%);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: white;
+}
+
+.transport-icon-header i {
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.transport-type-badge {
+    background: rgba(255, 255, 255, 0.25);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Transport Info */
+.transport-info {
+    padding: 24px;
+}
+
+.transport-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.transport-distance {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #7c3aed;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    padding: 8px 12px;
+    background: #f5f3ff;
+    border-radius: 8px;
+    width: fit-content;
+}
+
+.transport-distance i {
+    font-size: 1rem;
+}
+
+.transport-address {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    color: #64748b;
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+.transport-address i {
+    margin-top: 3px;
+    color: #7c3aed;
+}
+
+/* Transport Details */
+.transport-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.detail-badge {
+    padding: 6px 12px;
+    background: #f1f5f9;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    color: #475569;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.detail-badge i {
+    color: #7c3aed;
+}
+
+/* Transport Footer */
+.transport-footer {
+    padding-top: 16px;
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.transport-directions-btn {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #7c3aed 0%, #c084fc 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.transport-directions-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
+}
+
+/* Color Coding by Transport Type */
+.transport-card[data-type="bus"] .transport-icon-header {
+    background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+}
+
+.transport-card[data-type="metro"] .transport-icon-header {
+    background: linear-gradient(135deg, #ef4444 0%, #f87171 100%);
+}
+
+.transport-card[data-type="airport"] .transport-icon-header {
+    background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+}
+
+.transport-card[data-type="parking"] .transport-icon-header {
+    background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+}
+
+/* Map View */
+.transport-map-view {
+    margin-top: 20px;
+}
+
+#transport-map-container {
+    border: 2px solid #e2e8f0;
+}
+
+/* Map Info Window Styles */
+.transport-map-popup {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    padding: 4px;
+    min-width: 220px;
+}
+
+.transport-map-popup h3 {
+    margin: 0 0 8px 0;
+    color: #1e293b;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.transport-map-popup .popup-type {
+    display: inline-block;
+    padding: 3px 10px;
+    background: #f1f5f9;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #7c3aed;
+    margin-bottom: 8px;
+}
+
+.transport-map-popup p {
+    margin: 6px 0;
+    font-size: 0.85rem;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.transport-map-popup a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 10px;
+    padding: 6px 12px;
+    background: linear-gradient(135deg, #7c3aed 0%, #c084fc 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.transport-map-popup a:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+}
+
+/* Empty State */
+.no-transport-found {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.no-transport-found i {
+    font-size: 4rem;
+    color: #cbd5e1;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.no-transport-found h3 {
+    color: #475569;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.no-transport-found p {
+    color: #94a3b8;
+    font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .transportation-section {
+        margin: 30px 15px;
+        padding: 25px 15px;
+    }
+
+    .transport-tabs {
+        gap: 8px;
+    }
+
+    .transport-tab {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+    }
+
+    .transport-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .transportation-section .section-header h2 {
+        font-size: 1.8rem;
+    }
+
+    #transport-map-container {
+        height: 400px !important;
+    }
+}
+
+/* Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
