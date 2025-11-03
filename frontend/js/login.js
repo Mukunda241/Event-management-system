@@ -159,7 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
           } else if (data.role === "manager") {
             window.location.href = "event-management.html";
           } else {
-            window.location.href = "home.html";
+            window.location.href = "index.html";
           }
         }, 1500);
       } else if (response.status === 403) {
