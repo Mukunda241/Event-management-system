@@ -6,7 +6,7 @@ const API_CONFIG = {
     LOCAL_API_URL: 'http://localhost:5000',
     
     // For production (update this after deploying backend to Render)
-    PRODUCTION_API_URL: 'https://your-backend-app.onrender.com',
+    PRODUCTION_API_URL: 'https://event-management-system-6lyo.onrender.com',
     
     // Automatically use production URL if not running locally
     get BASE_URL() {
