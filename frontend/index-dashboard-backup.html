@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventPulse - Discover. Engage. Celebrate.</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <link rel="stylesheet" href="css/loading-states.css">
+    <link rel="stylesheet" href="css/toast.css">
+    <link rel="stylesheet" href="css/notifications.css">
+    <script src="js/config.js"></script>
+    <script src="js/dark-mode.js"></script>
+    <script src="js/toast.js"></script>
+    <script src="js/notifications.js"></script>
+    <script defer src="js/header-search.js"></script>
+    <script defer src="js/script.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="css/icon-animations.css">
+</head>
+<body>
+
+    <!-- Modern Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <!-- Logo Section -->
+            <div class="logo-section">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 4H5C3.89543 4 3 4.89543 3 6V20C3 21.1046 3.89543 22 5 22H19C20.1046 22 21 21.1046 21 20V6C21 4.89543 20.1046 4 19 4Z" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M16 2V6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M8 2V6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M3 10H21" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="12" cy="15" r="2" fill="currentColor"/>
+                </svg>
+                <div>
+                    <div class="logo-text">EventPulse</div>
+                    <div class="logo-subtext">Discover. Engage. Celebrate.</div>
+                </div>
+            </div>
+            
+            <!-- Search Bar -->
+            <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" placeholder="Search events..." class="search-bar">
+            </div>
+            
+            <!-- User Actions -->
+            <div class="user-actions">
+                <button class="notification-btn">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </button>
+                <button class="logout-btn" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </button>
+            </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Modern Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-link active">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="calendar.html" class="nav-link">
+                <i class="fas fa-calendar-alt"></i>
+                <span>Calendar</span>
+            </a>
+            <a href="favorites.html" class="nav-link">
+                <i class="fas fa-heart"></i>
+                <span>Favorites</span>
+            </a>
+            <a href="leaderboard.html" class="nav-link">
+                <i class="fas fa-trophy"></i>
+                <span>Leaderboard</span>
+            </a>
+            <a href="events.html" class="nav-link">
+                <i class="fas fa-ticket-alt"></i>
+                <span>Events</span>
+            </a>
+            <a href="my-tickets.html" class="nav-link">
+                <i class="fas fa-qrcode"></i>
+                <span>My Tickets</span>
+            </a>
+            <a href="profile.html" class="nav-link">
+                <i class="fas fa-user-circle"></i>
+                <span>Profile</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="content-wrapper">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-content">
+                    <h1>Welcome Back!</h1>
+                    <p>Discover amazing events happening around you</p>
+                </div>
+                <div class="quick-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-calendar"></i></div>
+                        <div class="stat-info">
+                            <div class="stat-value" id="upcoming-count">0</div>
+                            <div class="stat-label">Upcoming Events</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-heart"></i></div>
+                        <div class="stat-info">
+                            <div class="stat-value" id="favorites-count">0</div>
+                            <div class="stat-label">Favorites</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-trophy"></i></div>
+                        <div class="stat-info">
+                            <div class="stat-value" id="points-count">245</div>
+                            <div class="stat-label">Points</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pinned Events Section -->
+            <section class="dashboard-section">
+                <div class="section-header">
+                    <div class="header-left">
+                        <i class="fas fa-thumbtack"></i>
+                        <h2>Pinned Events</h2>
+                        <span class="event-count-badge" id="pinnedCount">0</span>
+                    </div>
+                    <a href="events.html" class="view-all-btn">
+                        View All
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"/>
+                            <polyline points="12 5 19 12 12 19"/>
+                        </svg>
+                    </a>
+                </div>
+                <div id="pinned-events" class="events-grid"></div>
+                <div id="pinned-empty" class="empty-state" style="display: none;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/>
+                    </svg>
+                    <h3>No Pinned Events</h3>
+                    <p>Pin your favorite events to see them here</p>
+                </div>
+            </section>
+
+            <!-- Upcoming Events Section -->
+            <section class="dashboard-section">
+                <div class="section-header">
+                    <div class="header-left">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                        <h2>Upcoming Events</h2>
+                        <span class="event-count-badge" id="upcoming-badge">0</span>
+                    </div>
+                    <a href="events.html" class="view-all-btn">
+                        View All
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"/>
+                            <polyline points="12 5 19 12 12 19"/>
+                        </svg>
+                    </a>
+                </div>
+                <div id="upcoming-events" class="events-grid"></div>
+                <div id="upcoming-empty" class="empty-state" style="display: none;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                    <h3>No Upcoming Events</h3>
+                    <p>Check back later for new events</p>
+                </div>
+            </section>
+
+            <!-- Live Events Map -->
+            <section class="dashboard-section map-section">
+                <div class="section-header">
+                    <div class="header-left">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        <h2>Live Events Map</h2>
+                    </div>
+                </div>
+                <div id="map" class="map-container"></div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Modern Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">Help Center</a>
+                <a href="#">Feedback</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Social Media</a>
+            </div>
+            <p class="copyright">© 2025 EventPulse. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function logout() {
+            localStorage.clear();
+            window.location.href = "login.html";
+        }
+    </script>
+    
+    <!-- Points System -->
+    <script src="js/points-system.js"></script>
+    <link rel="stylesheet" href="css/points-system.css">
+</body>
+</html>
+
+
